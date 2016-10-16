@@ -1,5 +1,5 @@
 /**
- *    Copyright 2015-2016 the original author or authors.
+ *    Copyright 2016 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public class OrderForm implements Serializable {
 	private String cardType;
 	@NotNull
 	@Size(max = 80)
-	@Pattern(regexp = "^[0-9 ]*$")
+	@Pattern(regexp = "^[0-9 -]*$")
 	private String creditCard;
 	@NotNull
 	@Size(max = 8)
