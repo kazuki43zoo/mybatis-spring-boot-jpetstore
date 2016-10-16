@@ -9,7 +9,7 @@ In this section, we will walk through this sample to understand how is it built 
 > **Note:**
 >
 > This sample application is under development.
-> If you found a issue, please report from [here](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/issues/new).
+> If you found an issue, please report from [here](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/issues/new).
 
 
 ## Stacks
