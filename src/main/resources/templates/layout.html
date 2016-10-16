@@ -1,0 +1,129 @@
+<!--/*
+
+       Copyright 2015-2016 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+*/-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>JPetStore Demo</title>
+    <link rel="StyleSheet" th:href="@{/css/jpetstore.css}" type="text/css" media="screen" />
+</head>
+
+<body th:with="isErrorResponse=${#request.getAttribute('javax.servlet.error.status_code') ge 400}">
+
+<div id="Header">
+
+    <div id="Logo">
+        <div id="LogoContent">
+            <a th:href="@{/catalog}">
+                <img th:src="@{/images/logo-topbar.gif}" />
+            </a>
+        </div>
+    </div>
+
+
+    <div id="Menu">
+        <div id="MenuContent" th:if="${!isErrorResponse}">
+            <a th:href="@{/cart}">
+                <img align="middle" name="img_cart" th:src="@{/images/cart.gif}" />
+            </a>
+            <img align="middle" th:src="@{/images/separator.gif}" />
+            <a th:href="@{/login}" sec:authorize="!isAuthenticated()">
+                Sign In
+            </a>
+            <a th:href="@{/logout}" sec:authorize="${isAuthenticated()}">
+                Sign Out
+            </a>
+            <img align="middle" th:src="@{/images/separator.gif}" sec:authorize="${isAuthenticated()}"/>
+            <a th:href="@{/my/account/update(form)}" th:if="${true}" sec:authorize="${isAuthenticated()}">
+                My Account
+            </a>
+            <img align="middle" th:src="@{/images/separator.gif}" />
+            <a th:href="@{/help.html}" target="help">
+                ?
+            </a>
+        </div>
+    </div>
+
+    <div id="Search">
+        <div id="SearchContent" th:if="${!isErrorResponse}">
+            <form th:action="@{/catalog/products}" method="get" th:object="${@productSearchCriteria}">
+                <input name="keywords" size="14" th:value="${@productSearchCriteria.keywords}"/>
+                <input type="submit" value="Search" />
+            </form>
+        </div>
+    </div>
+
+    <div id="QuickLinks" th:if="${!isErrorResponse}">
+        <a th:href="@{/catalog/categories/FISH}">
+            <img th:src="@{/images/sm_fish.gif}" />
+        </a>
+        <img th:src="@{/images/separator.gif}" />
+        <a th:href="@{/catalog/categories/DOGS}">
+            <img th:src="@{/images/sm_dogs.gif}" />
+        </a>
+        <img th:src="@{/images/separator.gif}" />
+        <a th:href="@{/catalog/categories/REPTILES}">
+            <img th:src="@{/images/sm_reptiles.gif}" />
+        </a>
+        <img th:src="@{/images/separator.gif}" />
+        <a th:href="@{/catalog/categories/CATS}">
+            <img th:src="@{/images/sm_cats.gif}" />
+        </a>
+        <img th:src="@{/images/separator.gif}" />
+        <a th:href="@{/catalog/categories/BIRDS}">
+            <img th:src="@{/images/sm_birds.gif}" />
+        </a>
+    </div>
+
+</div>
+
+<div id="Content">
+
+    <ul class="messages" th:if="${messages != null}">
+        <li th:each="message : ${messages}" th:text="${message}"></li>
+    </ul>
+
+    <section layout:fragment="content">
+        Content
+    </section>
+</div>
+
+<div id="Footer">
+
+    <div id="PoweredBy">
+        <a href="http://www.mybatis.org" target="mybatis-homepage">
+            www.mybatis.org
+        </a>
+    </div>
+
+    <div id="Banner">
+        <span sec:authorize="isAuthenticated()"
+              th:if="${#authentication.principal.account.bannerOption}"
+              th:utext="${#authentication.principal.account.bannerName}">
+            Banner
+        </span>
+    </div>
+
+</div>
+
+
+</body>
+</html>

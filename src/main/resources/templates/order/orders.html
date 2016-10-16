@@ -1,0 +1,60 @@
+<!--/*
+
+       Copyright 2015-2016 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+*/-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<body>
+<div id="Content">
+    <section layout:fragment="content">
+
+        <div id="Catalog">
+
+            <h2>My Orders</h2>
+
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Total Price</th>
+                </tr>
+                <tr th:if="${#lists.isEmpty(orderList)}">
+                    <td colspan="3">
+                        Order not found.
+                    </td>
+                </tr>
+                <tr th:each="order : ${orderList}">
+                    <td>
+                        <a th:href="@{/my/orders/{orderId}(orderId=${order.orderId})}">
+                            <span th:text="${order.orderId}"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <span th:text="${#temporals.format(order.orderDate, 'yyyy/MM/dd HH:mm:ss')}"></span>
+                    </td>
+                    <td>
+                        $<span th:text="${#numbers.formatDecimal(order.totalPrice, 1, 'COMMA', 2, 'POINT')}"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</div>
+</body>
+</html>

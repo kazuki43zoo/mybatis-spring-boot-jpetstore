@@ -1,0 +1,72 @@
+<!--/*
+
+       Copyright 2015-2016 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+*/-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<body>
+<div id="Content">
+    <section layout:fragment="content">
+
+        <div id="BackLink">
+            <a th:href="@{/catalog/categories/{categoryId}(categoryId=${product.categoryId})}">Return to <span th:text="${product.categoryId}"></span></a>
+        </div>
+
+        <div id="Catalog">
+
+            <h2 th:text="${product.name}"></h2>
+
+            <table>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Product ID</th>
+                    <th>Description</th>
+                    <th>List Price</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr th:each="item : ${itemList}">
+                    <td>
+                        <a th:href="@{/catalog/items/{itemId}(itemId=${item.itemId})}" th:text="${item.itemId}">EST-18</a>
+                    </td>
+                    <td th:text="${item.product.productId}">AV-CB-01</td>
+                    <td>
+                        <span th:text="${item.attribute1}">Adult</span>
+                        <span th:text="${item.attribute2}">Male</span>
+                        <span th:text="${item.attribute3}"></span>
+                        <span th:text="${item.attribute4}"></span>
+                        <span th:text="${item.attribute5}"></span>
+                        <span th:text="${product.name}">Amazon Parrot</span>
+                    </td>
+                    <td>
+                        $<span th:text="${#numbers.formatDecimal(item.listPrice, 1, 'COMMA', 2, 'POINT')}">193.50</span>
+                    </td>
+                    <td>
+                        <a th:href="@{/cart(add,itemId=${item.itemId})}" class="Button">
+                            Add to Cart
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </section>
+</div>
+</body>
+</html>
