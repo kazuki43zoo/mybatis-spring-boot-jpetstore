@@ -61,7 +61,7 @@ This sample use the [Lombok](https://projectlombok.org/) to generate setter meth
 If this sample application run on your IDE, please install the Lombok. (see [https://projectlombok.org/download.html](https://projectlombok.org/download.html))
 
 And this application use the groovy to use multiple line string on MyBatis Mapper method.
-If this sample application run on your IDE, please add `src/main/groovy` in source path.
+If this sample application run on your IDE, please add `src/main/groovy` into source path.
 
 e.g.) multiple line string on MyBatis Mapper method
 
