@@ -36,6 +36,7 @@ interface SequenceMapper {
             SEQUENCE
         WHERE
             NAME = #{name}
+        FOR UPDATE
     ''')
     Sequence getSequence(String name);
 
