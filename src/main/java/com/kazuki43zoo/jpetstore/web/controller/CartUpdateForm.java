@@ -36,17 +36,17 @@ public class CartUpdateForm implements Serializable {
 	private static final long serialVersionUID = 3518654576948095255L;
 
 	@Valid
-	private List<ItemLine> itemLines = new ArrayList<>();
+	private List<Line> lines = new ArrayList<>();
 
 	public void addItemLine(String itemId, Integer quantity) {
-		itemLines.add(new ItemLine(itemId, quantity));
+		lines.add(new Line(itemId, quantity));
 	}
 
 	@Getter
 	@Setter
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class ItemLine {
+	public static class Line {
 
 		@NotNull
 		private String itemId;

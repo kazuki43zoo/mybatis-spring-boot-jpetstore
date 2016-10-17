@@ -52,7 +52,7 @@ public class ApplicationConfig {
 
 	@Bean
 	List<String> clCategories() {
-		List<String> categoryList = new ArrayList<String>();
+		List<String> categoryList = new ArrayList<>();
 		categoryList.add("FISH");
 		categoryList.add("DOGS");
 		categoryList.add("REPTILES");
@@ -63,7 +63,7 @@ public class ApplicationConfig {
 
 	@Bean
 	List<String> clLanguages() {
-		List<String> languageList = new ArrayList<String>();
+		List<String> languageList = new ArrayList<>();
 		languageList.add("English");
 		languageList.add("Japanese");
 		return Collections.unmodifiableList(languageList);

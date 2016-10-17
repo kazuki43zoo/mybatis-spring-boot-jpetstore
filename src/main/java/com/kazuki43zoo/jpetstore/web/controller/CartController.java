@@ -81,7 +81,7 @@ public class CartController {
 					Collections.singletonList("Input values are invalid. Please confirm error messages."));
 			return viewCart();
 		}
-		form.getItemLines().forEach(x -> {
+		form.getLines().forEach(x -> {
 			if (x.getQuantity() > 0) {
 				cart.setQuantityByItemId(x.getItemId(), x.getQuantity());
 			} else {
