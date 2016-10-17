@@ -55,7 +55,6 @@
                         </tr>
 
                         <tr th:each="cartItem : ${@cart.cartItems}">
-                            <input type="hidden" th:value="${cartItem.item.itemId}"/>
                             <td>
                                 <a th:href="@{/catalog/items/{itemId}(itemId=${cartItem.item.itemId})}">
                                     <span th:text="${cartItem.item.itemId}">EST-1</span>
@@ -80,6 +79,7 @@
                                 </span>
                             </td>
                             <td>
+                                <input type="hidden" th:value="${cartItem.item.itemId}"/>
                                 <input th:field="*{lines[__${cartItemStat.index}__].quantity}"/>
                                 <div th:errors="*{lines[__${cartItemStat.index}__].quantity}">must be a integer
                                 </div>
