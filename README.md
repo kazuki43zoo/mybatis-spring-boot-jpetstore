@@ -21,7 +21,7 @@ In this section, we will walk through this sample to understand how is it built 
 * Tomcat 8.5 (Embed Application Server)
 * Java 8 
 * Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
-* Lombok 1.6
+* Lombok 1.16
 * etc ...
 
 ## Run using Maven command
