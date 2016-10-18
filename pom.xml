@@ -8,8 +8,29 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>jpetstore on spring-boot + mybatis</name>
+	<name>jpetstore on spring-boot + mybatis + thymeleaf</name>
 	<description>A sample web application built on MyBatis 3.4, Spring Boot 1.4 and Thymeleaf 3.0</description>
+
+	<organization />
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>kazuki43zoo</id>
+			<name>Kazuki Shimizu</name>
+			<email>kazuki43zoo@gmail.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore.git</url>
+	</scm>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
