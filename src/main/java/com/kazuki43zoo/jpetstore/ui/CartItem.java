@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.kazuki43zoo.jpetstore.web;
+package com.kazuki43zoo.jpetstore.ui;
 
 import com.kazuki43zoo.jpetstore.domain.OrderLine;
 import lombok.Getter;

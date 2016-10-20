@@ -13,14 +13,9 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.kazuki43zoo.jpetstore.web.controller;
+package com.kazuki43zoo.jpetstore.ui.controller;
 
-import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.service.AccountService;
-import com.kazuki43zoo.jpetstore.component.EntityChangedEvent;
-import org.springframework.beans.BeanUtils;
-import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,21 +26,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.groups.Default;
 import java.util.Collections;
 
 /**
  * @author Kazuki Shimizu
  */
-@RequestMapping("/my/account")
+@RequestMapping("/accounts")
 @Controller
-public class MyAccountController {
+public class AccountController {
 
 	private final AccountService accountService;
-	private final ApplicationEventPublisher publisher;
 
-	public MyAccountController(AccountService accountService, ApplicationEventPublisher publisher) {
+	public AccountController(AccountService accountService) {
 		this.accountService = accountService;
-		this.publisher = publisher;
 	}
 
 	@ModelAttribute
@@ -53,33 +47,27 @@ public class MyAccountController {
 		return new AccountForm();
 	}
 
-	@GetMapping(path = "/update", params = "form")
-	public String updateForm(AccountForm form, @AuthenticationPrincipal(expression = "account") Account account) {
-		BeanUtils.copyProperties(account, form, "password");
-		return "account/updateForm";
+	@GetMapping(path = "/create", params = "form")
+	public String createForm() {
+		return "account/createForm";
 	}
 
-	@PostMapping("/update")
-	public String update(@Validated AccountForm form, BindingResult result,
-						 @AuthenticationPrincipal(expression = "account") Account account,
+	@PostMapping("/create")
+	public String create(@Validated({Default.class, AccountForm.Create.class}) AccountForm form, BindingResult result,
 						 Model model, RedirectAttributes redirectAttributes) {
 
 		if (result.hasErrors()) {
 			model.addAttribute("messages",
 					Collections.singletonList("Input values are invalid. Please confirm error messages."));
-			return "account/updateForm";
+			return createForm();
 		}
 
-		BeanUtils.copyProperties(form, account, "username", "password");
-
-		accountService.updateAccount(account, form.getPassword());
-
-		publisher.publishEvent(new EntityChangedEvent<>(this, account));
+		accountService.createAccount(form.toAccount());
 
 		redirectAttributes.addFlashAttribute("messages",
-				Collections.singletonList("Your account has been updated."));
+				Collections.singletonList("Your account has been created. Please try login !!"));
 
-		return "redirect:/my/account/update?form";
+		return "redirect:/login";
 	}
 
 }

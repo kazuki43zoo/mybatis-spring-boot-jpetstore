@@ -114,7 +114,7 @@ Project structure of this sample application is as follow:
         │               ├── config         // Store configuration classes
         │               ├── domain         // Store domain objects
         │               ├── service        // Store service classes
-        │               └── web            // Store classes that depends on web layer
+        │               └── ui             // Store classes that depends user interface
         │                   └── controller // Store controller classes
         └── resources
             ├── static                     // Store static web resource files

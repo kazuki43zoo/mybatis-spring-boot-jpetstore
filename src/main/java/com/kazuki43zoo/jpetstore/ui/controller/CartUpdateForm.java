@@ -13,27 +13,48 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.kazuki43zoo.jpetstore.web;
+package com.kazuki43zoo.jpetstore.ui.controller;
 
-import com.kazuki43zoo.jpetstore.domain.Product;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.SessionScope;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Kazuki Shimizu
  */
-@SessionScope
-@Component
 @Getter
 @Setter
-public class Favourite implements Serializable {
+public class CartUpdateForm implements Serializable {
+	private static final long serialVersionUID = 3518654576948095255L;
 
-	private static final long serialVersionUID = -2312034790616581552L;
-	private List<Product> productList;
+	@Valid
+	private List<Line> lines = new ArrayList<>();
+
+	public void addItemLine(String itemId, Integer quantity) {
+		lines.add(new Line(itemId, quantity));
+	}
+
+	@Getter
+	@Setter
+	@AllArgsConstructor
+	@NoArgsConstructor
+	public static class Line {
+
+		@NotNull
+		private String itemId;
+
+		@NotNull
+		@Min(0)
+		private Integer quantity;
+
+	}
 
 }

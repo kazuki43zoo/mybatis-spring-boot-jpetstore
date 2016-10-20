@@ -13,12 +13,12 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.kazuki43zoo.jpetstore.web.controller;
+package com.kazuki43zoo.jpetstore.ui.controller;
 
 import com.kazuki43zoo.jpetstore.service.CatalogService;
-import com.kazuki43zoo.jpetstore.web.CartItem;
+import com.kazuki43zoo.jpetstore.ui.CartItem;
 import com.kazuki43zoo.jpetstore.domain.Item;
-import com.kazuki43zoo.jpetstore.web.Cart;
+import com.kazuki43zoo.jpetstore.ui.Cart;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

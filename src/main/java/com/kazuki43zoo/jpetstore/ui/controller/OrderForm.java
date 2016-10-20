@@ -13,13 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.kazuki43zoo.jpetstore.web.controller;
+package com.kazuki43zoo.jpetstore.ui.controller;
 
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.domain.Order;
 import lombok.Getter;
 import lombok.Setter;
-import com.kazuki43zoo.jpetstore.web.Cart;
+import com.kazuki43zoo.jpetstore.ui.Cart;
 import org.springframework.beans.BeanUtils;
 
 import javax.validation.constraints.NotNull;

@@ -13,10 +13,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.kazuki43zoo.jpetstore.web.controller;
+package com.kazuki43zoo.jpetstore.ui.controller;
 
 import com.kazuki43zoo.jpetstore.domain.Product;
-import com.kazuki43zoo.jpetstore.web.ProductSearchCriteria;
+import com.kazuki43zoo.jpetstore.ui.ProductSearchCriteria;
 import com.kazuki43zoo.jpetstore.domain.Category;
 import com.kazuki43zoo.jpetstore.domain.Item;
 import com.kazuki43zoo.jpetstore.service.CatalogService;
