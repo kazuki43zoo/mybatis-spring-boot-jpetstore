@@ -85,7 +85,7 @@ interface CategoryMapper {
 
 ## Access to the index page
 
-* http://localhost:8080/
+* [http://localhost:8080/](http://localhost:8080/)
 
 ## Default active accounts (ID/PASSWORD)
 
