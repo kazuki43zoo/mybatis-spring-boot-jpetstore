@@ -60,8 +60,8 @@ In this section, we will walk through this sample to understand how is it built 
 This sample use the [Lombok](https://projectlombok.org/) to generate setter method, getter method and constructor.
 If this sample application run on your IDE, please install the Lombok. (see [https://projectlombok.org/download.html](https://projectlombok.org/download.html))
 
-And this application use the groovy to use multiple line string on MyBatis Mapper method.
-If this sample application run on your IDE, please add `src/main/groovy` into source path.
+And this application use the groovy language to use multiple line string on MyBatis Mapper method.
+If this sample application run on your IDE, please convert to groovy project and add `src/main/groovy` into source path.
 
 e.g.) multiple line string on MyBatis Mapper method
 
