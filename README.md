@@ -39,8 +39,6 @@ In this section, we will walk through this sample to understand how is it built 
   $ ./mvnw clean spring-boot:run
   ```
 
-* Access a top page ([http://localhost:8080/](http://localhost:8080/))
-
 ## Run using java command
 
 * Build a jar file
@@ -85,6 +83,9 @@ interface CategoryMapper {
 }
 ```
 
+## Access to the index page
+
+* http://localhost:8080/
 
 ## Default active accounts (ID/PASSWORD)
 
