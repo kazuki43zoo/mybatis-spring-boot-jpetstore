@@ -1,7 +1,7 @@
 # mybatis-spring-boot-jpetstore
 
 This sample is a web application built on MyBatis, Spring Boot(Spring MVC, Spring Security) and Thymeleaf.
-This is another implementation of MyBatis sample application (https://github.com/mybatis/jpetstore-6).
+This is another implementation of MyBatis JPetStore sample application (https://github.com/mybatis/jpetstore-6).
 
 Original application is available for downloading in the downloads section of MyBatis project site.
 In this section, we will walk through this sample to understand how is it built and learn how to run it.
