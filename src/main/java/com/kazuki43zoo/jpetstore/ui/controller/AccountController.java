@@ -15,6 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.ui.controller;
 
+import com.kazuki43zoo.jpetstore.component.message.Messages;
 import com.kazuki43zoo.jpetstore.service.AccountService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,15 +58,15 @@ public class AccountController {
 						 Model model, RedirectAttributes redirectAttributes) {
 
 		if (result.hasErrors()) {
-			model.addAttribute("messages",
-					Collections.singletonList("Input values are invalid. Please confirm error messages."));
+			model.addAttribute(
+					new Messages().error("Input values are invalid. Please confirm error messages."));
 			return createForm();
 		}
 
 		accountService.createAccount(form.toAccount());
 
-		redirectAttributes.addFlashAttribute("messages",
-				Collections.singletonList("Your account has been created. Please try login !!"));
+		redirectAttributes.addFlashAttribute(
+				new Messages().success("Your account has been created. Please try login !!"));
 
 		return "redirect:/login";
 	}

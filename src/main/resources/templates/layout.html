@@ -98,7 +98,7 @@
 <div id="Content">
 
     <ul class="messages" th:if="${messages != null}">
-        <li th:each="message : ${messages}" th:text="${message}"></li>
+        <li th:each="message : ${messages}" th:class="${message.type}" th:text="${message.text}"></li>
     </ul>
 
     <section layout:fragment="content">

@@ -15,6 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.ui.controller;
 
+import com.kazuki43zoo.jpetstore.component.message.Messages;
 import com.kazuki43zoo.jpetstore.service.CatalogService;
 import com.kazuki43zoo.jpetstore.ui.CartItem;
 import com.kazuki43zoo.jpetstore.domain.Item;
@@ -77,8 +78,8 @@ public class CartController {
 	@PostMapping(params = "update")
 	public String updateCart(@Validated CartUpdateForm form, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("messages",
-					Collections.singletonList("Input values are invalid. Please confirm error messages."));
+			model.addAttribute(
+					new Messages().error("Input values are invalid. Please confirm error messages."));
 			return viewCart();
 		}
 		form.getLines().forEach(x -> {

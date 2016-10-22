@@ -15,6 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.ui.controller;
 
+import com.kazuki43zoo.jpetstore.component.message.Messages;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.domain.Order;
 import com.kazuki43zoo.jpetstore.service.OrderService;
@@ -64,8 +65,8 @@ public class MyOrderController {
 	@PostMapping(path = "/create", params = "continue")
 	public String createContinue(@Validated OrderForm form, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("messages",
-					Collections.singletonList("Input values are invalid. Please confirm error messages."));
+			model.addAttribute(
+					new Messages().error("Input values are invalid. Please confirm error messages."));
 			return "order/orderBasicForm";
 		}
 		if (form.isShippingAddressRequired()) {
@@ -78,8 +79,8 @@ public class MyOrderController {
 	@PostMapping(path = "/create", params = "confirm")
 	public String createConfirm(@Validated OrderForm form, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("messages",
-					Collections.singletonList("Input values are invalid. Please confirm error messages."));
+			model.addAttribute(
+					new Messages().error("Input values are invalid. Please confirm error messages."));
 			return "order/orderShippingForm";
 		}
 		return "order/orderConfirm";
@@ -95,16 +96,17 @@ public class MyOrderController {
 		}
 
 		if (result.hasErrors()) {
-			redirectAttributes.addFlashAttribute("messages",
-					Collections.singletonList("Input values are invalid. Please confirm error messages."));
+			redirectAttributes.addFlashAttribute(
+					new Messages().error("Input values are invalid. Please confirm error messages."));
 			return "redirect:/my/orders/create?from";
 		}
 
 		Order order = form.toOrder(cart);
 		orderService.createOrder(order, account);
 
-		redirectAttributes.addFlashAttribute("messages",
-				Collections.singletonList("Thank you, your order has been submitted."));
+		redirectAttributes.addFlashAttribute(
+				new Messages().success("Thank you, your order has been submitted."));
+
 		redirectAttributes.addAttribute("orderId", order.getOrderId());
 
 		cart.clear();

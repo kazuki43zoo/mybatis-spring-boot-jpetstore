@@ -340,3 +340,21 @@ body>#Banner {
 .fieldError {
   color: #ff0000;
 }
+
+.messages .error {
+  color: #ff0000;
+}
+
+.messages .warn {
+  color: #ffa500;
+}
+
+
+.messages .success {
+  color: #008000;
+}
+
+
+.messages .info {
+  color: #0000ff;
+}

@@ -15,6 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.ui.controller;
 
+import com.kazuki43zoo.jpetstore.component.message.Messages;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.service.AccountService;
 import com.kazuki43zoo.jpetstore.component.event.EntityChangedEvent;
@@ -65,8 +66,8 @@ public class MyAccountController {
 						 Model model, RedirectAttributes redirectAttributes) {
 
 		if (result.hasErrors()) {
-			model.addAttribute("messages",
-					Collections.singletonList("Input values are invalid. Please confirm error messages."));
+			model.addAttribute(
+					new Messages().error("Input values are invalid. Please confirm error messages."));
 			return "account/updateForm";
 		}
 
@@ -76,8 +77,8 @@ public class MyAccountController {
 
 		publisher.publishEvent(new EntityChangedEvent<>(this, account));
 
-		redirectAttributes.addFlashAttribute("messages",
-				Collections.singletonList("Your account has been updated."));
+		redirectAttributes.addFlashAttribute(
+				new Messages().success("Your account has been updated."));
 
 		return "redirect:/my/account/update?form";
 	}
