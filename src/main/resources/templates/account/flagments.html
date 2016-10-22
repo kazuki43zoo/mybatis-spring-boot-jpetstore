@@ -28,70 +28,70 @@
             <td>First name:</td>
             <td>
                 <input th:field="*{firstName}"/>
-                <div th:errors="*{firstName}"></div>
+                <div th:errors="*{firstName}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Last name:</td>
             <td>
                 <input th:field="*{lastName}"/>
-                <div th:errors="*{lastName}"></div>
+                <div th:errors="*{lastName}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Email:</td>
             <td>
                 <input size="40" th:field="*{email}"/>
-                <div th:errors="*{email}"></div>
+                <div th:errors="*{email}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Phone:</td>
             <td>
                 <input th:field="*{phone}"/>
-                <div th:errors="*{phone}"></div>
+                <div th:errors="*{phone}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Address 1:</td>
             <td>
                 <input size="40" th:field="*{address1}"/>
-                <div th:errors="*{address1}"></div>
+                <div th:errors="*{address1}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Address 2:</td>
             <td>
                 <input size="40" th:field="*{address2}"/>
-                <div th:errors="*{address2}"></div>
+                <div th:errors="*{address2}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>City:</td>
             <td>
                 <input th:field="*{city}"/>
-                <div th:errors="*{city}"></div>
+                <div th:errors="*{city}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>State:</td>
             <td>
                 <input size="4" th:field="*{state}"/>
-                <div th:errors="*{state}"></div>
+                <div th:errors="*{state}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Zip:</td>
             <td>
                 <input size="10" th:field="*{zip}"/>
-                <div th:errors="*{zip}"></div>
+                <div th:errors="*{zip}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Country:</td>
             <td>
                 <input size="15" th:field="*{country}"/>
-                <div th:errors="*{country}"></div>
+                <div th:errors="*{country}" class="fieldError"></div>
             </td>
         </tr>
     </table>
@@ -107,7 +107,7 @@
                             th:value="${language}" th:text="${language}">
                     </option>
                 </select>
-                <div th:errors="*{languagePreference}"></div>
+                <div th:errors="*{languagePreference}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
@@ -118,21 +118,21 @@
                             th:value="${category}" th:text="${category}">
                     </option>
                 </select>
-                <div th:errors="*{favouriteCategoryId}"></div>
+                <div th:errors="*{favouriteCategoryId}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Enable MyList:</td>
             <td>
                 <input type="checkbox" th:field="*{listOption}"/>
-                <div th:errors="*{listOption}"></div>
+                <div th:errors="*{listOption}" class="fieldError"></div>
             </td>
         </tr>
         <tr>
             <td>Enable MyBanner:</td>
             <td>
                 <input type="checkbox" th:field="*{bannerOption}"/>
-                <div th:errors="*{bannerOption}"></div>
+                <div th:errors="*{bannerOption}" class="fieldError"></div>
             </td>
         </tr>
 

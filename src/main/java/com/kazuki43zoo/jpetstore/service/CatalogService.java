@@ -15,7 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.service;
 
-import com.kazuki43zoo.jpetstore.component.ResourceNotFoundException;
+import com.kazuki43zoo.jpetstore.component.exception.ResourceNotFoundException;
 import com.kazuki43zoo.jpetstore.domain.Category;
 import com.kazuki43zoo.jpetstore.domain.Item;
 import com.kazuki43zoo.jpetstore.domain.Product;

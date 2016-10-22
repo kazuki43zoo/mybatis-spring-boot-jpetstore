@@ -41,21 +41,21 @@
                                     Visa
                                 </option>
                             </select>
-                            <div th:errors="*{cardType}"></div>
+                            <div th:errors="*{cardType}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Card Number:</td>
                         <td>
                             <input type="password" th:field="*{creditCard}"/> * Use a fake number !
-                            <div th:errors="*{creditCard}"></div>
+                            <div th:errors="*{creditCard}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Expiry Date (MM/YYYY):</td>
                         <td>
                             <input th:field="*{expiryDate}"/>
-                            <div th:errors="*{expiryDate}"></div>
+                            <div th:errors="*{expiryDate}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
@@ -66,56 +66,56 @@
                         <td>First name:</td>
                         <td>
                             <input th:field="*{billToFirstName}"/>
-                            <div th:errors="*{billToFirstName}"></div>
+                            <div th:errors="*{billToFirstName}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Last name:</td>
                         <td>
                             <input th:field="*{billToLastName}"/>
-                            <div th:errors="*{billToLastName}"></div>
+                            <div th:errors="*{billToLastName}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Address 1:</td>
                         <td>
                             <input size="40" th:field="*{billAddress1}"/>
-                            <div th:errors="*{billAddress1}"></div>
+                            <div th:errors="*{billAddress1}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Address 2:</td>
                         <td>
                             <input size="40" th:field="*{billAddress2}"/>
-                            <div th:errors="*{billAddress2}"></div>
+                            <div th:errors="*{billAddress2}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>City:</td>
                         <td>
                             <input size="40" th:field="*{billCity}"/>
-                            <div th:errors="*{billCity}"></div>
+                            <div th:errors="*{billCity}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>State:</td>
                         <td>
                             <input size="4" th:field="*{billState}"/>
-                            <div th:errors="*{billState}"></div>
+                            <div th:errors="*{billState}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Zip:</td>
                         <td>
                             <input size="10" th:field="*{billZip}"/>
-                            <div th:errors="*{billZip}"></div>
+                            <div th:errors="*{billZip}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Country:</td>
                         <td>
                             <input size="15" th:field="*{billCountry}"/>
-                            <div th:errors="*{billCountry}"></div>
+                            <div th:errors="*{billCountry}" class="fieldError"></div>
                         </td>
                     </tr>
 
@@ -123,7 +123,7 @@
                         <td colspan=2>
                             <input type="checkbox" th:field="*{shippingAddressRequired}"/>
                             <label th:for="${#ids.prev('shippingAddressRequired')}">Ship to different address...</label>
-                            <div th:errors="*{shippingAddressRequired}"></div>
+                            <div th:errors="*{shippingAddressRequired}" class="fieldError"></div>
                         </td>
                     </tr>
 

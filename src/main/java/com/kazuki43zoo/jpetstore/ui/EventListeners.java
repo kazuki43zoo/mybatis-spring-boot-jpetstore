@@ -15,7 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.ui;
 
-import com.kazuki43zoo.jpetstore.component.EntityChangedEvent;
+import com.kazuki43zoo.jpetstore.component.event.EntityChangedEvent;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.domain.Product;
 import com.kazuki43zoo.jpetstore.service.AccountUserDetails;

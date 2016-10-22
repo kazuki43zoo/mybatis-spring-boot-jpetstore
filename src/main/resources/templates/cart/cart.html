@@ -81,8 +81,7 @@
                             <td>
                                 <input type="hidden" th:value="${cartItem.item.itemId}"/>
                                 <input th:field="*{lines[__${cartItemStat.index}__].quantity}"/>
-                                <div th:errors="*{lines[__${cartItemStat.index}__].quantity}">must be a integer
-                                </div>
+                                <div th:errors="*{lines[__${cartItemStat.index}__].quantity}" class="fieldError">must be an integer</div>
                             </td>
                             <td>
                                 $<span

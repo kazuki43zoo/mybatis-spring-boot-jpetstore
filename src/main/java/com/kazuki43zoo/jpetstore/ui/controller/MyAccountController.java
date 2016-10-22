@@ -17,7 +17,7 @@ package com.kazuki43zoo.jpetstore.ui.controller;
 
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.service.AccountService;
-import com.kazuki43zoo.jpetstore.component.EntityChangedEvent;
+import com.kazuki43zoo.jpetstore.component.event.EntityChangedEvent;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

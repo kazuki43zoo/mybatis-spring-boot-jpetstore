@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.kazuki43zoo.jpetstore.component;
+package com.kazuki43zoo.jpetstore.component.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

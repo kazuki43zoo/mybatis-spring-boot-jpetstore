@@ -15,6 +15,8 @@
  */
 package com.kazuki43zoo.jpetstore.ui.controller;
 
+import com.kazuki43zoo.jpetstore.component.validation.NumericCharacters;
+import com.kazuki43zoo.jpetstore.component.validation.TelephoneNumber;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,46 +40,64 @@ public class AccountForm implements Serializable {
 	@NotNull(groups = Create.class)
 	@Size(max = 40)
 	private String username;
+
 	@NotNull(groups = Create.class)
 	@Size(min = 8)
 	private String password;
+
 	private String repeatedPassword;
+
 	@NotNull
 	@Email
 	private String email;
+
 	@NotNull
 	@Size(max = 40)
 	private String firstName;
+
 	@NotNull
 	@Size(max = 40)
 	private String lastName;
+
 	@NotNull
 	@Size(max = 40)
 	private String address1;
+
 	@Size(max = 40)
 	private String address2;
+
 	@NotNull
 	@Size(max = 40)
 	private String city;
+
 	@NotNull
 	@Size(max = 40)
 	private String state;
+
 	@NotNull
 	@Size(max = 20)
+	@NumericCharacters
 	private String zip;
+
 	@NotNull
 	@Size(max = 40)
 	private String country;
+
 	@NotNull
 	@Size(max = 40)
+	@TelephoneNumber
 	private String phone;
+
 	@NotNull
 	@Size(max = 30)
 	private String favouriteCategoryId;
+
 	@NotNull
 	@Size(max = 40)
 	private String languagePreference;
+
 	private boolean listOption;
+
 	private boolean bannerOption;
 
 	Account toAccount() {
@@ -85,4 +105,5 @@ public class AccountForm implements Serializable {
 		BeanUtils.copyProperties(this, account);
 		return account;
 	}
+
 }

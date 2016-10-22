@@ -15,6 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.ui.controller;
 
+import com.kazuki43zoo.jpetstore.component.validation.NumericCharacters;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.domain.Order;
 import lombok.Getter;
@@ -39,34 +40,41 @@ public class OrderForm implements Serializable {
 	@NotNull
 	@Size(max = 40)
 	private String cardType;
+
 	@NotNull
 	@Size(max = 80)
-	@Pattern(regexp = "^[0-9 -]*$")
+	@NumericCharacters
 	private String creditCard;
+
 	@NotNull
-	@Size(max = 8)
-	@Pattern(regexp = "^[0-9]{2}[/]{1}[0-9]{4}$")
+	@Pattern(regexp = "^\\d{2}/\\d{4}$")
 	private String expiryDate;
 
 	@NotNull
 	@Size(max = 40)
 	private String billToFirstName;
+
 	@NotNull
 	@Size(max = 40)
 	private String billToLastName;
+
 	@Size(max = 40)
 	private String billAddress1;
+
 	@Size(max = 40)
 	private String billAddress2;
+
 	@Size(max = 40)
 	private String billCity;
+
 	@Size(max = 40)
 	private String billState;
+
 	@Size(max = 20)
-	@Pattern(regexp = "^[a-z0-9]*$", flags = Pattern.Flag.CASE_INSENSITIVE)
+	@NumericCharacters
 	private String billZip;
+
 	@Size(max = 20)
-	@Pattern(regexp = "^[a-z0-9]*$", flags = Pattern.Flag.CASE_INSENSITIVE)
 	private String billCountry;
 
 	private boolean shippingAddressRequired;
@@ -74,26 +82,32 @@ public class OrderForm implements Serializable {
 	@NotNull
 	@Size(max = 40)
 	private String shipToFirstName;
+
 	@NotNull
 	@Size(max = 40)
 	private String shipToLastName;
+
 	@NotNull
 	@Size(max = 40)
 	private String shipAddress1;
+
 	@Size(max = 40)
 	private String shipAddress2;
+
 	@NotNull
 	@Size(max = 40)
 	private String shipCity;
+
 	@Size(max = 40)
 	private String shipState;
+
 	@NotNull
 	@Size(max = 20)
-	@Pattern(regexp = "^[a-z0-9]*$", flags = Pattern.Flag.CASE_INSENSITIVE)
+	@NumericCharacters
 	private String shipZip;
+
 	@NotNull
 	@Size(max = 20)
-	@Pattern(regexp = "^[a-z0-9]*$", flags = Pattern.Flag.CASE_INSENSITIVE)
 	private String shipCountry;
 
 	void initialize(Account account) {

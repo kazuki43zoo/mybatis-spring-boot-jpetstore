@@ -42,14 +42,14 @@
                         <td>New password:</td>
                         <td>
                             <input type="password" th:field="*{password}"/>
-                            <div th:errors="*{password}"></div>
+                            <div th:errors="*{password}" class="fieldError"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Repeat password:</td>
                         <td>
                             <input type="password" th:field="*{repeatedPassword}"/>
-                            <div th:errors="*{repeatedPassword}"></div>
+                            <div th:errors="*{repeatedPassword}" class="fieldError"></div>
                         </td>
                     </tr>
                 </table>
