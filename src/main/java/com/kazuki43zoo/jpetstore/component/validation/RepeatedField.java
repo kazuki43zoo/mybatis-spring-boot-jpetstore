@@ -28,10 +28,10 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @author Kazuki Shimizu
  */
 @Documented
-@Constraint(validatedBy = RepeatedValidator.class)
+@Constraint(validatedBy = RepeatedFieldValidator.class)
 @Target({ TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-public @interface Repeated {
+public @interface RepeatedField {
 
 	String message() default "{com.kazuki43zoo.jpetstore.component.validation.Repeated.message}";
 	Class<?>[] groups() default {};
@@ -43,7 +43,7 @@ public @interface Repeated {
 	@Retention(RUNTIME)
 	@Documented
 	@interface List {
-		Repeated[] value();
+		RepeatedField[] value();
 	}
 
 }

@@ -26,13 +26,13 @@ import java.util.Objects;
 /**
  * @author Kazuki Shimizu
  */
-public class RepeatedValidator implements ConstraintValidator<Repeated, Object> {
+public class RepeatedFieldValidator implements ConstraintValidator<RepeatedField, Object> {
 
 	private String field;
 	private String repeatedField;
 	private String message;
 
-	public void initialize(Repeated constraintAnnotation) {
+	public void initialize(RepeatedField constraintAnnotation) {
 		this.field = constraintAnnotation.field();
 		this.repeatedField = "repeated" + StringUtils.capitalize(field);
 		this.message = constraintAnnotation.message();

@@ -16,7 +16,7 @@
 package com.kazuki43zoo.jpetstore.ui.controller;
 
 import com.kazuki43zoo.jpetstore.component.validation.NumericCharacters;
-import com.kazuki43zoo.jpetstore.component.validation.Repeated;
+import com.kazuki43zoo.jpetstore.component.validation.RepeatedField;
 import com.kazuki43zoo.jpetstore.component.validation.TelephoneNumber;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import lombok.Getter;
@@ -31,7 +31,7 @@ import java.io.Serializable;
 /**
  * @author Kazuki Shimizu
  */
-@Repeated(field = "password")
+@RepeatedField(field = "password")
 @Getter
 @Setter
 public class AccountForm implements Serializable {
