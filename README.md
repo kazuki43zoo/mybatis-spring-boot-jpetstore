@@ -101,6 +101,18 @@ interface CategoryMapper {
 * j2ee/j2ee
 * ACID/ACID
 
+## Data Store
+
+In this application, application data stored in filesystem files.
+
+```
+$HOME
+└── db
+    + jpetstore.script
+    + jpetstore.properties
+```
+
+This application is used HSQLDB standard mode.
 
 ## Project Structure
 
