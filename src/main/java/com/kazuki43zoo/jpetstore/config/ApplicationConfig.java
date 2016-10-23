@@ -32,7 +32,7 @@ import java.util.List;
 public class ApplicationConfig {
 
 	@Bean
-	Clock clock() {
+	protected Clock clock() {
 		return Clock.systemDefaultZone();
 	}
 
