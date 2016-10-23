@@ -41,7 +41,7 @@ public @interface NumericCharacters {
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 
-	@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
+	@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 	@Retention(RUNTIME)
 	@Documented
 	@interface List {
