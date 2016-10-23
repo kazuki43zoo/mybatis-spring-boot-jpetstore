@@ -37,12 +37,12 @@ public class ApplicationConfig {
 	}
 
 	@Bean
-	PasswordEncoder passwordEncoder() {
+	protected PasswordEncoder passwordEncoder() {
 		return new Pbkdf2PasswordEncoder();
 	}
 
 	@Bean
-	List<String> clCreditCardTypes() {
+	protected List<String> clCreditCardTypes() {
 		List<String> cardList = new ArrayList<>();
 		cardList.add("Visa");
 		cardList.add("MasterCard");
@@ -51,7 +51,7 @@ public class ApplicationConfig {
 	}
 
 	@Bean
-	List<String> clCategories() {
+	protected List<String> clCategories() {
 		List<String> categoryList = new ArrayList<>();
 		categoryList.add("FISH");
 		categoryList.add("DOGS");
@@ -62,7 +62,7 @@ public class ApplicationConfig {
 	}
 
 	@Bean
-	List<String> clLanguages() {
+	protected List<String> clLanguages() {
 		List<String> languageList = new ArrayList<>();
 		languageList.add("English");
 		languageList.add("Japanese");
