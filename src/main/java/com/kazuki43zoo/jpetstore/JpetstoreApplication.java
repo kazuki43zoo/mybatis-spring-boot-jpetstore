@@ -15,8 +15,6 @@
  */
 package com.kazuki43zoo.jpetstore;
 
-import com.kazuki43zoo.jpetstore.mapper.AccountMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -25,9 +23,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class JpetstoreApplication {
-
-	@Autowired
-	AccountMapper mapper;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpetstoreApplication.class, args);

@@ -35,8 +35,6 @@ import java.io.Serializable;
 public class AccountForm implements Serializable {
 	private static final long serialVersionUID = 925786404136765833L;
 
-	interface Create {}
-
 	@NotNull(groups = Create.class)
 	@Size(max = 40)
 	private String username;
@@ -105,5 +103,7 @@ public class AccountForm implements Serializable {
 		BeanUtils.copyProperties(this, account);
 		return account;
 	}
+
+	interface Create {}
 
 }
