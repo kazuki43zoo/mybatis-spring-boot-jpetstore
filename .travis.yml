@@ -13,11 +13,5 @@ cache:
 install: true
 
 script:
-  - |
-    if [ "$TRAVIS_PULL_REQUEST" == "true" ]; then
-        ./mvnw -U package;
-    fi
-  - |
-    if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
-        ./mvnw org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=$SONAR_TOKEN;
-    fi
+  - if [ "$TRAVIS_PULL_REQUEST" == "true" ]; then ./mvnw -U package; fi
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then ./mvnw -U org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=$SONAR_TOKEN; fi
