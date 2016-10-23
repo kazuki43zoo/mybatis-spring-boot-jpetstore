@@ -18,11 +18,13 @@ package com.kazuki43zoo.jpetstore.component.event;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
+import java.io.Serializable;
+
 /**
  * @author Kazuki Shimizu
  */
 @Getter
-public class EntityChangedEvent<T> extends ApplicationEvent {
+public class EntityChangedEvent<T extends Serializable> extends ApplicationEvent {
 
 	private final T entity;
 

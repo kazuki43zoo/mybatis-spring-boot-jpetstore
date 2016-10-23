@@ -19,6 +19,8 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.io.Serializable;
+
 /**
  * @author Kazuki Shimizu
  */
@@ -29,9 +31,9 @@ public class ResourceNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = -1087806513635138814L;
 
 	private final String resourceName;
-	private final Object id;
+	private final Serializable id;
 
-	public ResourceNotFoundException(String resourceName, Object id) {
+	public ResourceNotFoundException(String resourceName, Serializable id) {
 		super(resourceName + " is not found.");
 		this.resourceName = resourceName;
 		this.id = id;

@@ -46,8 +46,8 @@ public class CartUpdateForm implements Serializable {
 	@Setter
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class Line {
-
+	public static class Line implements Serializable {
+		private static final long serialVersionUID = 6844663228538160416L;
 		@NotNull
 		private String itemId;
 
