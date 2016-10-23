@@ -21,6 +21,7 @@ In this section, we will walk through this sample to understand how is it built 
 * Spring Boot 1.4 (Spring Framework 4.3, Spring Security 4.1)
 * Thymeleaf 3.0
 * HSQLDB 2.3 (Embed Database)
+* Flyway 3.2 (DB Migration)
 * Tomcat 8.5 (Embed Application Server)
 * Java 8 
 * Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
