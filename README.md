@@ -120,10 +120,12 @@ Project structure of this sample application is as follow:
         │               └── ui             // Store classes that depends user interface
         │                   └── controller // Store controller classes
         └── resources
+            ├── db                         // Store sql files for Flyway
+            │   └── migration
             ├── static                     // Store static web resource files
             │   ├── css
             │   └── images
-            └── templates                  // Store view template files
+            └── templates                  // Store view template files for Thymeleaf
                 ├── account
                 ├── auth
                 ├── cart
