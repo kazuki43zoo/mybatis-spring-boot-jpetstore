@@ -112,8 +112,6 @@ $HOME
       + jpetstore.properties
 ```
 
-This application is used HSQLDB standard mode.
-
 ## Project Structure
 
 Project structure of this sample application is as follow:
