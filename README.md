@@ -14,6 +14,9 @@ In this section, we will walk through this sample to understand how is it built 
 > This sample application is under development.
 > If you found an issue, please report from [here](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/issues/new).
 
+## Requirements
+
+* Java 8+ (JDK 1.8+)
 
 ## Stacks
 
@@ -23,7 +26,6 @@ In this section, we will walk through this sample to understand how is it built 
 * HSQLDB 2.3 (Embed Database)
 * Flyway 3.2 (DB Migration)
 * Tomcat 8.5 (Embed Application Server)
-* Java 8 
 * Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.16
 * etc ...
