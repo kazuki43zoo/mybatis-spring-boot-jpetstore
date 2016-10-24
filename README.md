@@ -132,6 +132,10 @@ Project structure of this sample application is as follow:
         │       └── kazuki43zoo
         │           └── jpetstore
         │               ├── component      // Store general component classes
+        │               │   ├── event
+        │               │   ├── exception
+        │               │   ├── message
+        │               │   └── validation
         │               ├── config         // Store configuration classes
         │               ├── domain         // Store domain objects
         │               ├── service        // Store service classes
