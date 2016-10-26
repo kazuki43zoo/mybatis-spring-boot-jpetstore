@@ -15,12 +15,14 @@
  */
 package com.kazuki43zoo.jpetstore.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.thymeleaf.spring4.SpringTemplateEngine;
 
 /**
  * @author Kazuki Shimizu
@@ -35,6 +37,11 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 			// configure for empty string change to null
 			binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
 		}
+	}
+
+	@Autowired
+	void configureThymeleafSpringTemplateEngine(SpringTemplateEngine templateEngine) {
+		templateEngine.setEnableSpringELCompiler(true);
 	}
 
 }
