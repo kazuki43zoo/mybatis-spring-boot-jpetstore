@@ -40,7 +40,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	}
 
 	@Autowired
-	void configureThymeleafSpringTemplateEngine(SpringTemplateEngine templateEngine) {
+	protected void configureThymeleafSpringTemplateEngine(SpringTemplateEngine templateEngine) {
 		templateEngine.setEnableSpringELCompiler(true);
 	}
 
