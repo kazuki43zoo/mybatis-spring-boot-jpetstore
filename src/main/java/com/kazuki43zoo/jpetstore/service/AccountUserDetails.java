@@ -30,7 +30,7 @@ public class AccountUserDetails extends User {
 	private final Account account;
 
 	AccountUserDetails(Account account) {
-		super(account.getUsername(), account.getPassword(), AuthorityUtils.createAuthorityList("USER"));
+		super(account.getUsername(), account.getPassword(), AuthorityUtils.createAuthorityList("ROLE_USER"));
 		this.account = account;
 	}
 
