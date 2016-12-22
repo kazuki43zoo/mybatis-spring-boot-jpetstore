@@ -51,7 +51,7 @@
 		<thymeleaf-layout-dialect.version>2.0.4</thymeleaf-layout-dialect.version>
 		<thymeleaf-extras-springsecurity4.version>3.0.1.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
-		<spring-security.version>4.2.0.RELEASE</spring-security.version>
+		<spring-security.version>4.2.1.RELEASE</spring-security.version>
 	</properties>
 
 	<dependencies>
