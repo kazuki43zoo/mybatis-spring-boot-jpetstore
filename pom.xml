@@ -45,7 +45,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<mybatis-spring-boot-starter.version>1.1.1</mybatis-spring-boot-starter.version>
+		<mybatis-spring-boot-starter.version>1.2.0</mybatis-spring-boot-starter.version>
 		<mybatis-typehandlers-jsr310.version>1.0.1</mybatis-typehandlers-jsr310.version>
 		<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
 		<thymeleaf-layout-dialect.version>2.0.4</thymeleaf-layout-dialect.version>

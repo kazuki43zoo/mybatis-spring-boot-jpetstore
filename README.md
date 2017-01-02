@@ -20,7 +20,7 @@ In this section, we will walk through this sample to understand how is it built 
 
 ## Stacks
 
-* MyBatis Spring Boot Starter 1.1 (MyBatis 3.4, MyBatis Spring 1.3)
+* MyBatis Spring Boot Starter 1.2 (MyBatis 3.4, MyBatis Spring 1.3)
 * Spring Boot 1.4 (Spring Framework 4.3)
 * Spring Security 4.2
 * Thymeleaf 3.0
