@@ -22,6 +22,7 @@ import com.kazuki43zoo.jpetstore.domain.Product;
 import com.kazuki43zoo.jpetstore.mapper.CategoryMapper;
 import com.kazuki43zoo.jpetstore.mapper.ItemMapper;
 import com.kazuki43zoo.jpetstore.mapper.ProductMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,17 +34,12 @@ import java.util.stream.Stream;
  * @author Kazuki Shimizu
  */
 @Service
+@RequiredArgsConstructor
 public class CatalogService {
 
 	private final CategoryMapper categoryMapper;
 	private final ItemMapper itemMapper;
 	private final ProductMapper productMapper;
-
-	public CatalogService(CategoryMapper categoryMapper, ItemMapper itemMapper, ProductMapper productMapper) {
-		this.categoryMapper = categoryMapper;
-		this.itemMapper = itemMapper;
-		this.productMapper = productMapper;
-	}
 
 	public Category getCategory(String categoryId) {
 		return Optional.ofNullable(categoryMapper.getCategory(categoryId))

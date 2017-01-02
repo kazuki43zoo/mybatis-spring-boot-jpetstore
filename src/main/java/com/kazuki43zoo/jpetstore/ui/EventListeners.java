@@ -20,6 +20,7 @@ import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.domain.Product;
 import com.kazuki43zoo.jpetstore.service.AccountUserDetails;
 import com.kazuki43zoo.jpetstore.service.CatalogService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
 import org.springframework.stereotype.Component;
@@ -30,15 +31,11 @@ import java.util.List;
  * @author Kazuki Shimizu
  */
 @Component
+@RequiredArgsConstructor
 public class EventListeners {
 
 	private final CatalogService catalogService;
 	private final Favourite favourite;
-
-	public EventListeners(CatalogService catalogService, Favourite favourite) {
-		this.catalogService = catalogService;
-		this.favourite = favourite;
-	}
 
 	@EventListener
 	public void handleAuthenticationSuccessEvent(AuthenticationSuccessEvent event) {

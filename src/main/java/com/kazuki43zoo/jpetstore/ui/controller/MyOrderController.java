@@ -20,6 +20,7 @@ import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.domain.Order;
 import com.kazuki43zoo.jpetstore.service.OrderService;
 import com.kazuki43zoo.jpetstore.ui.Cart;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,15 +38,11 @@ import java.util.List;
 @SessionAttributes("orderForm")
 @RequestMapping("/my/orders")
 @Controller
+@RequiredArgsConstructor
 public class MyOrderController {
 
 	private final OrderService orderService;
 	private final Cart cart;
-
-	public MyOrderController(OrderService orderService, Cart cart) {
-		this.orderService = orderService;
-		this.cart = cart;
-	}
 
 	@ModelAttribute("orderForm")
 	public OrderForm setUpForm() {
