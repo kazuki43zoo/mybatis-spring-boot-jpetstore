@@ -14,6 +14,11 @@ In this section, we will walk through this sample to understand how is it built 
 > This sample application is under development.
 > If you found an issue, please report from [here](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/issues/new).
 
+## Demo
+
+The Demo application is running on the Pivotal Web Services.
+Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
+
 ## Requirements
 
 * Java 8+ (JDK 1.8+)
