@@ -56,7 +56,7 @@ In this section, we will walk through this sample to understand how is it built 
 * Run java command
 
   ```
-  $ java -jar target/mybatis-spring-boot-jpetstore-1.0.0-SNAPSHOT.jar
+  $ java -jar target/mybatis-spring-boot-jpetstore-1.1.0-SNAPSHOT.jar
   ```
 
 ## Run on IDEs (Note)
