@@ -1,6 +1,6 @@
 # mybatis-spring-boot-jpetstore
 
-[![Build Status](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore.svg?branch=master)](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore)
+[![Build Status](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore.svg?branch=1.0.x)](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ac9fe028b1c49a4a61e27cc54cb3b19)](https://www.codacy.com/app/kazuki43zoo/mybatis-spring-boot-jpetstore?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kazuki43zoo/mybatis-spring-boot-jpetstore&amp;utm_campaign=Badge_Grade)
 
 This sample is a web application built on MyBatis, Spring Boot(Spring MVC, Spring Security) and Thymeleaf.
@@ -57,7 +57,7 @@ In this section, we will walk through this sample to understand how is it built 
 * Run java command
 
   ```
-  $ java -jar target/mybatis-spring-boot-jpetstore-1.0.0-SNAPSHOT.jar
+  $ java -jar target/mybatis-spring-boot-jpetstore-1.0.1-SNAPSHOT.jar
   ```
 
 ## Run on IDEs (Note)
