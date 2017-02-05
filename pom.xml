@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>jpetstore on spring-boot + mybatis + thymeleaf</name>
-	<description>A sample web application built on MyBatis 3.4, Spring Boot 1.4 and Thymeleaf 3.0</description>
+	<description>A sample web application built on MyBatis 3, Spring Boot and Thymeleaf 3</description>
 	<url>https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/</url>
 	<inceptionYear>2016</inceptionYear>
 
