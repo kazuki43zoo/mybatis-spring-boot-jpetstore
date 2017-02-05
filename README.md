@@ -16,7 +16,7 @@ In this section, we will walk through this sample to understand how is it built 
 
 ## Demo
 
-The Demo application is running on the Pivotal Web Services.
+The Demo application is running on the [Pivotal Web Services](https://run.pivotal.io/).
 Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 
 ## Requirements
