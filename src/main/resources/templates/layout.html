@@ -66,7 +66,7 @@
         <div id="SearchContent" th:if="${!isErrorResponse}">
             <form th:action="@{/catalog/products}" method="get" th:object="${@productSearchCriteria}">
                 <input name="keywords" size="14" th:value="${@productSearchCriteria.keywords}"/>
-                <input type="submit" value="Search" />
+                <input id="searchProducts" type="submit" value="Search" />
             </form>
         </div>
     </div>

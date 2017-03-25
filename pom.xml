@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>jpetstore on spring-boot + mybatis + thymeleaf</name>
-	<description>A sample web application built on MyBatis 3.4, Spring Boot 1.4 and Thymeleaf 3.0</description>
+	<description>A sample web application built on MyBatis 3, Spring Boot and Thymeleaf 3</description>
 	<url>https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/</url>
 	<inceptionYear>2016</inceptionYear>
 
@@ -52,6 +52,10 @@
 		<thymeleaf-extras-springsecurity4.version>3.0.1.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
 		<spring-security.version>4.2.2.RELEASE</spring-security.version>
+		<!-- for test -->
+		<selenide.version>4.3</selenide.version>
+		<selenium.version>3.0.1</selenium.version>
+		<geckodriver.version>0.14.0</geckodriver.version>
 	</properties>
 
 	<dependencies>
@@ -91,6 +95,10 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
@@ -114,6 +122,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>selenide</artifactId>
+			<version>${selenide.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -121,6 +136,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.gmavenplus</groupId>
@@ -141,8 +163,68 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>download-maven-plugin</artifactId>
+				<version>1.3.0</version>
+				<executions>
+					<execution>
+						<id>install-geckodriver</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>https://github.com/mozilla/geckodriver/releases/download/v${geckodriver.version}/geckodriver-v${geckodriver.version}-${geckodriver.os}.${geckodriver.archive.extenstion}</url>
+							<unpack>true</unpack>
+							<failOnError>false</failOnError>
+							<outputDirectory>${project.basedir}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<!-- Profiles for OS family -->
+		<profile>
+			<id>linux</id>
+			<activation>
+				<os>
+					<family>unix</family>
+				</os>
+			</activation>
+			<properties>
+				<geckodriver.os>linux64</geckodriver.os>
+				<geckodriver.archive.extenstion>tar.gz</geckodriver.archive.extenstion>
+			</properties>
+		</profile>
+		<profile>
+			<id>mac</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<properties>
+				<geckodriver.os>macos</geckodriver.os>
+				<geckodriver.archive.extenstion>tar.gz</geckodriver.archive.extenstion>
+			</properties>
+		</profile>
+		<profile>
+			<id>windows</id>
+			<activation>
+				<os>
+					<family>dos</family>
+				</os>
+			</activation>
+			<properties>
+				<geckodriver.os>win64</geckodriver.os>
+				<geckodriver.archive.extenstion>zip</geckodriver.archive.extenstion>
+			</properties>
+		</profile>
+	</profiles>
 
 	<repositories>
 		<repository>

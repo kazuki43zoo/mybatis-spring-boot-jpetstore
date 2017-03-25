@@ -14,6 +14,11 @@ In this section, we will walk through this sample to understand how is it built 
 > This sample application is under development.
 > If you found an issue, please report from [here](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/issues/new).
 
+## Demo
+
+The Demo application is running on the [Pivotal Web Services](https://run.pivotal.io/).
+Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
+
 ## Requirements
 
 * Java 8+ (JDK 1.8+)
@@ -21,8 +26,7 @@ In this section, we will walk through this sample to understand how is it built 
 ## Stacks
 
 * MyBatis Spring Boot Starter 1.2 (MyBatis 3.4, MyBatis Spring 1.3)
-* Spring Boot 1.4 (Spring Framework 4.3)
-* Spring Security 4.2
+* Spring Boot 1.5 (Spring Framework 4.3, Spring Security 4.2)
 * Thymeleaf 3.0
 * HSQLDB 2.3 (Embed Database)
 * Flyway 3.2 (DB Migration)

@@ -32,7 +32,7 @@
 
         <div id="Catalog">
 
-            Please confirm the information below and then press submit...
+            <span id="confirmMessage">Please confirm the information below and then press submit...</span>
 
             <table>
                 <tr>
@@ -115,7 +115,7 @@
             </table>
 
             <form th:action="@{/my/orders/create}" method="post">
-                <input type="submit" value="Submit"/>
+                <input id="order" type="submit" value="Submit"/>
             </form>
         </div>
 
