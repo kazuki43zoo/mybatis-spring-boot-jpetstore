@@ -35,7 +35,7 @@
             <table>
                 <tr>
                     <th align="center" colspan="2">
-                        Order #<span th:text="${order.orderId}"></span>
+                        Order #<span id="orderId" th:text="${order.orderId}"></span>
                         <span th:text="${#temporals.format(order.orderDate, 'yyyy/MM/dd HH:mm:ss')}"></span>
                     </th>
                 </tr>
