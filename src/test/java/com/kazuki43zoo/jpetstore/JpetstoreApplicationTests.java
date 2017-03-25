@@ -33,8 +33,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.*;
-import static org.hamcrest.core.Is.*;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 /**
  * @author Kazuki Shimizu
@@ -69,7 +68,7 @@ public class JpetstoreApplicationTests {
 
 		// Open the home page
 		open("/");
-		assertThat(title(), is("JPetStore Demo"));
+		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
@@ -97,7 +96,7 @@ public class JpetstoreApplicationTests {
 
 		// Checkout cart items
 		$(By.linkText("Proceed to Checkout")).click();
-		assertThat(title(), is("JPetStore Demo"));
+		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Input card information & Confirm order information
 		$(By.name("creditCard")).setValue("9999999999");
@@ -120,7 +119,7 @@ public class JpetstoreApplicationTests {
 
 		// Show order detail
 		$(By.linkText(orderId)).click();
-		assertThat($(By.id("orderId")).text(), is(orderId));
+		assertThat($(By.id("orderId")).text()).isEqualTo(orderId);
 
 		// Sign out
 		$(By.linkText("Sign Out")).click();
@@ -132,7 +131,7 @@ public class JpetstoreApplicationTests {
 	public void testUpdateProfile() {
 		// Open the home page
 		open("/");
-		assertThat(title(), is("JPetStore Demo"));
+		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
@@ -160,7 +159,7 @@ public class JpetstoreApplicationTests {
 	public void testRegistrationUser() {
 		// Open the home page
 		open("/");
-		assertThat(title(), is("JPetStore Demo"));
+		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
@@ -208,7 +207,7 @@ public class JpetstoreApplicationTests {
 	public void testSelectItems() {
 		// Open the home page
 		open("/");
-		assertThat(title(), is("JPetStore Demo"));
+		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
@@ -245,7 +244,7 @@ public class JpetstoreApplicationTests {
 
 		// Open the home page
 		open("/");
-		assertThat(title(), is("JPetStore Demo"));
+		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
@@ -262,7 +261,7 @@ public class JpetstoreApplicationTests {
 
 		// Open the home page
 		open("/");
-		assertThat(title(), is("JPetStore Demo"));
+		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
