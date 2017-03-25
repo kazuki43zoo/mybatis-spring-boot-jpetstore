@@ -22,5 +22,4 @@ before_script:
   - java -jar ./target/dependency/cargo-daemon-webapp.war &
 
 script:
-  - if [ "$TRAVIS_BRANCH" != "master" -o "$TRAVIS_PULL_REQUEST" == "true" ]; then ./mvnw -U package; fi
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" -a "$TRAVIS_BRANCH" == "master" ]; then ./mvnw -U org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=$SONAR_TOKEN; fi
+  - ./mvnw -U package
