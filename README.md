@@ -33,6 +33,8 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Tomcat 8.5 (Embed Application Server)
 * Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.16
+* Selenide 4.3
+* Selenium 3.0
 * etc ...
 
 ## Run using Maven command
@@ -55,7 +57,7 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Build a jar file
 
   ```
-  $ ./mvnw clean package
+  $ ./mvnw clean package -DskipTests=true
   ```
 
 * Run java command
@@ -63,6 +65,21 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
   ```
   $ java -jar target/mybatis-spring-boot-jpetstore-1.1.0-SNAPSHOT.jar
   ```
+
+## Perform integration test
+
+Perform integration tests for screen transition.
+
+> Requires:
+>
+> * Installed Firefox
+> * Mac, Linux and Windows OS(64 bit)
+
+
+```
+$ ./mvnw clean test
+```
+
 
 ## Run on IDEs (Note)
 
