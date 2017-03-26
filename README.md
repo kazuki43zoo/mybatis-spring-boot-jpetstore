@@ -66,7 +66,7 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
   $ java -jar target/mybatis-spring-boot-jpetstore-1.0.1-SNAPSHOT.jar
   ```
 
-## Perform integration test
+## Perform integration test using Maven command
 
 Perform integration tests for screen transition.
 
@@ -109,6 +109,13 @@ interface CategoryMapper {
     Category getCategory(String categoryId)
 
 }
+```
+
+If you want to perform integration tests using IDE feature, you need to install the [geckodriver](https://github.com/mozilla/geckodriver) into a directory on your command path(e.g: the root directory of this project).
+You can install the geckodriver into a directory on command path(the root directory of this project) as follow:
+
+```
+$ ./mvnw initialize
 ```
 
 ## Access to the index page
