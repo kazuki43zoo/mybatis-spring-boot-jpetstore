@@ -169,7 +169,7 @@
 				<executions>
 					<execution>
 						<id>install-geckodriver</id>
-						<phase>test-compile</phase>
+						<phase>initialize</phase>
 						<goals>
 							<goal>wget</goal>
 						</goals>
