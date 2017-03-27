@@ -73,7 +73,6 @@ Perform integration tests for screen transition.
 > Requires:
 >
 > * Installed Firefox
-> * Mac, Linux and Windows OS(64 bit)
 
 
 ```
@@ -109,13 +108,6 @@ interface CategoryMapper {
     Category getCategory(String categoryId)
 
 }
-```
-
-If you want to perform integration tests using IDE feature, you need to install the [geckodriver](https://github.com/mozilla/geckodriver) into a directory on your command path(e.g: the root directory of this project).
-You can install the geckodriver into a directory on command path(the root directory of this project) as follow:
-
-```
-$ ./mvnw initialize
 ```
 
 ## Access to the index page
