@@ -20,4 +20,4 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - ./mvnw -U package
+  - ./mvnw -U package -Dwdm.gitHubTokenName=${WDM_GITHUB_USER} -Dwdm.gitHubTokenSecret=${WDM_GITHUB_TOKEN}
