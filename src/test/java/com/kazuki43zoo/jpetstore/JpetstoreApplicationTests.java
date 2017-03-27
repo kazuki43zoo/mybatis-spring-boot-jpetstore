@@ -17,8 +17,10 @@ package com.kazuki43zoo.jpetstore;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.junit.ScreenShooter;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,8 +50,13 @@ public class JpetstoreApplicationTests {
 	@Rule
 	public ScreenShooter screenShooter = ScreenShooter.failedTests();
 
+	@BeforeClass
+	public static void setupWebDriverManager() {
+		FirefoxDriverManager.getInstance().setup();
+	}
+
 	@Before
-	public void setup() {
+	public void setupSelenide() {
 		browser = MARIONETTE;
 		timeout = TimeUnit.SECONDS.toMillis(10);
 		baseUrl = String.format("http://localhost:%d", port);
