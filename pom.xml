@@ -54,7 +54,7 @@
 		<!-- for test -->
 		<selenide.version>4.3</selenide.version>
 		<selenium.version>3.0.1</selenium.version>
-		<webdrivermanager.version>1.6.1</webdrivermanager.version>
+		<webdrivermanager.version>1.6.2</webdrivermanager.version>
 	</properties>
 
 	<dependencies>
