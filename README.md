@@ -87,6 +87,10 @@ If this sample application run on your IDE, please install the Lombok. (see [htt
 
 And this application use the groovy language to use multiple line string on MyBatis Mapper method.
 If this sample application run on your IDE, please convert to groovy project and add `src/main/groovy` into source path.
+And if you use a STS(or Eclipse), please install the Groovy Eclipse plugin. About how install the Groovy Eclipse, please see as follow:
+
+* https://github.com/groovy/groovy-eclipse/wiki
+
 
 e.g.) multiple line string on MyBatis Mapper method
 
