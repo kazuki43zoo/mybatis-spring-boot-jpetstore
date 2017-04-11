@@ -26,7 +26,8 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 ## Stacks
 
 * MyBatis Spring Boot Starter 1.2 (MyBatis 3.4, MyBatis Spring 1.3)
-* Spring Boot 1.5 (Spring Framework 4.3, Spring Security 4.2)
+* Spring Boot 1.4 (Spring Framework 4.3)
+* Spring Security 4.2
 * Thymeleaf 3.0
 * HSQLDB 2.3 (Embed Database)
 * Flyway 3.2 (DB Migration)
