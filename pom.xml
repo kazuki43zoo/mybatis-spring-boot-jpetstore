@@ -69,8 +69,8 @@
 		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
 		<!-- for test -->
-		<selenide.version>4.3</selenide.version>
-		<selenium.version>3.0.1</selenium.version>
+		<selenide.version>4.4.2</selenide.version>
+		<selenium.version>3.3.1</selenium.version>
 		<webdrivermanager.version>1.6.2</webdrivermanager.version>
 		<!-- for plugins -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
@@ -145,6 +145,12 @@
 			<artifactId>selenide</artifactId>
 			<version>${selenide.version}</version>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>${selenium.version}</version>
 		</dependency>
 
 		<dependency>
