@@ -25,7 +25,7 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 
 ## Stacks
 
-* MyBatis Spring Boot Starter 1.2 (MyBatis 3.4, MyBatis Spring 1.3)
+* MyBatis Spring Boot Starter 1.3 (MyBatis 3.4, MyBatis Spring 1.3)
 * Spring Boot 1.5 (Spring Framework 4.3, Spring Security 4.2)
 * Thymeleaf 3.0
 * HSQLDB 2.3 (Embed Database)
@@ -33,8 +33,8 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Tomcat 8.5 (Embed Application Server)
 * Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.16
-* Selenide 4.3
-* Selenium 3.0
+* Selenide 4.4
+* Selenium 3.3
 * etc ...
 
 ## Run using Maven command
