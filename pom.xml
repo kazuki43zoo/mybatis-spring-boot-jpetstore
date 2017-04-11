@@ -152,6 +152,7 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-support</artifactId>
 			<version>${selenium.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
