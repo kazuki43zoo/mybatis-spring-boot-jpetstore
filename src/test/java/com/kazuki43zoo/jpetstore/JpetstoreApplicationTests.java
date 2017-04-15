@@ -84,13 +84,13 @@ public class JpetstoreApplicationTests {
 
 		// Move to sign in page & sign
 		$(By.linkText("Sign In")).click();
-		$(By.name("username")).setValue("j2ee");
-		$(By.name("password")).setValue("j2ee");
+		$(By.name("username")).val("j2ee");
+		$(By.name("password")).val("j2ee");
 		$(By.id("login")).click();
 		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldBe(text("ABC"));
 
 		// Search items
-		$(By.name("keywords")).setValue("fish");
+		$(By.name("keywords")).val("fish");
 		$(By.id("searchProducts")).click();
 		$$(By.cssSelector("#Catalog table tr")).shouldHaveSize(3);
 
@@ -107,8 +107,8 @@ public class JpetstoreApplicationTests {
 		assertThat(title()).isEqualTo("JPetStore Demo");
 
 		// Input card information & Confirm order information
-		$(By.name("creditCard")).setValue("9999999999");
-		$(By.name("expiryDate")).setValue("04/2020");
+		$(By.name("creditCard")).val("9999999999");
+		$(By.name("expiryDate")).val("04/2020");
 		$(By.name("continue")).click();
 		$(By.id("confirmMessage")).shouldBe(text("Please confirm the information below and then press submit..."));
 
@@ -147,8 +147,8 @@ public class JpetstoreApplicationTests {
 
 		// Move to sign in page & sign
 		$(By.linkText("Sign In")).click();
-		$(By.name("username")).setValue("j2ee");
-		$(By.name("password")).setValue("j2ee");
+		$(By.name("username")).val("j2ee");
+		$(By.name("password")).val("j2ee");
 		$(By.id("login")).click();
 		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldBe(text("ABC"));
 
@@ -183,19 +183,19 @@ public class JpetstoreApplicationTests {
 
 		// Create a new user
 		String userId = String.valueOf(System.currentTimeMillis());
-		$(By.name("username")).setValue(userId);
-		$(By.name("password")).setValue("password");
-		$(By.name("repeatedPassword")).setValue("password");
-		$(By.name("firstName")).setValue("Jon");
-		$(By.name("lastName")).setValue("MyBatis");
-		$(By.name("email")).setValue("jon.mybatis@test.com");
-		$(By.name("phone")).setValue("09012345678");
-		$(By.name("address1")).setValue("Address1");
-		$(By.name("address2")).setValue("Address2");
-		$(By.name("city")).setValue("Minato-Ku");
-		$(By.name("state")).setValue("Tokyo");
-		$(By.name("zip")).setValue("0001234");
-		$(By.name("country")).setValue("Japan");
+		$(By.name("username")).val(userId);
+		$(By.name("password")).val("password");
+		$(By.name("repeatedPassword")).val("password");
+		$(By.name("firstName")).val("Jon");
+		$(By.name("lastName")).val("MyBatis");
+		$(By.name("email")).val("jon.mybatis@test.com");
+		$(By.name("phone")).val("09012345678");
+		$(By.name("address1")).val("Address1");
+		$(By.name("address2")).val("Address2");
+		$(By.name("city")).val("Minato-Ku");
+		$(By.name("state")).val("Tokyo");
+		$(By.name("zip")).val("0001234");
+		$(By.name("country")).val("Japan");
 		$(By.name("languagePreference")).selectOption("Japanese");
 		$(By.name("favouriteCategoryId")).selectOption("CATS");
 		$(By.name("listOption")).setSelected(true);
@@ -204,8 +204,8 @@ public class JpetstoreApplicationTests {
 		$(By.cssSelector(".messages li")).shouldBe(text("Your account has been created. Please try login !!"));
 
 		// Move to sign in page & sign
-		$(By.name("username")).setValue(userId);
-		$(By.name("password")).setValue("password");
+		$(By.name("username")).val(userId);
+		$(By.name("password")).val("password");
 		$(By.id("login")).click();
 		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldBe(text("Jon"));
 
