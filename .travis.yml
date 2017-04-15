@@ -15,16 +15,12 @@ cache:
 
 install: true
 
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
 script:
   - |
     if [ "$TRAVIS_BRANCH" != "master" -o "$TRAVIS_PULL_REQUEST" == "true" ]; then
-        ./mvnw -U package
+        ./mvnw -U install
     fi
   - |
     if [ "$TRAVIS_PULL_REQUEST" == "false" -a "$TRAVIS_BRANCH" == "master" ]; then
-        ./mvnw -U org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=${SONAR_TOKEN}
+        ./mvnw -U org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=${SONAR_TOKEN}
     fi
