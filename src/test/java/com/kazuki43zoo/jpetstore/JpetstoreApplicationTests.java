@@ -17,10 +17,8 @@ package com.kazuki43zoo.jpetstore;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.junit.ScreenShooter;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +27,8 @@ import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.*;
@@ -50,14 +50,9 @@ public class JpetstoreApplicationTests {
 	@Rule
 	public ScreenShooter screenShooter = ScreenShooter.failedTests();
 
-	@BeforeClass
-	public static void setupWebDriverManager() {
-		FirefoxDriverManager.getInstance().setup();
-	}
-
 	@Before
 	public void setupSelenide() {
-		browser = MARIONETTE;
+		browser = HTMLUNIT;
 		timeout = TimeUnit.SECONDS.toMillis(10);
 		baseUrl = String.format("http://localhost:%d", port);
 		fastSetValue = true;
@@ -271,13 +266,19 @@ public class JpetstoreApplicationTests {
 		open("/");
 		assertThat(title()).isEqualTo("JPetStore Demo");
 
+		String mainWindow = getWebDriver().getWindowHandle();
+
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
 		$(By.id("WelcomeContent")).shouldBe(text(""));
 
 		// Move to help
 		$(By.linkText("?")).click();
-		switchTo().window(1);
+
+		Set<String> windows = new HashSet<>(getWebDriver().getWindowHandles());
+		windows.remove(mainWindow);
+		switchTo().window(windows.iterator().next());
+
 		$(By.cssSelector("#Content h1")).shouldBe(text("JPetStore Demo"));
 
 	}
