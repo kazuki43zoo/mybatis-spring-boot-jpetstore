@@ -22,7 +22,7 @@ before_script:
 script:
   - |
     if [ "$TRAVIS_BRANCH" != "master" -o "$TRAVIS_PULL_REQUEST" == "true" ]; then
-        ./mvnw -U package -Dwdm.gitHubTokenName=${WDM_GITHUB_USER} -Dwdm.gitHubTokenSecret=${WDM_GITHUB_TOKEN}
+        ./mvnw -U package
     fi
   - |
     if [ "$TRAVIS_PULL_REQUEST" == "false" -a "$TRAVIS_BRANCH" == "master" ]; then
