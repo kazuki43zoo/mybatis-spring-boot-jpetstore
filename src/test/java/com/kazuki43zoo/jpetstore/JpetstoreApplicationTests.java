@@ -60,6 +60,7 @@ public class JpetstoreApplicationTests {
 		browser = MARIONETTE;
 		timeout = TimeUnit.SECONDS.toMillis(10);
 		baseUrl = String.format("http://localhost:%d", port);
+		fastSetValue = true;
 	}
 
 	@After
