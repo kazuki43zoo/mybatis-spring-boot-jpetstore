@@ -70,11 +70,6 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 
 Perform integration tests for screen transition.
 
-> Requires:
->
-> * Installed Firefox
-
-
 ```
 $ ./mvnw clean test
 ```
