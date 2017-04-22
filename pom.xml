@@ -216,11 +216,11 @@
 	</build>
 
 	<repositories>
-		<repository>
-			<id>sonatype-oss-snapshots</id>
-			<name>Sonatype OSS Snapshots Repository</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</repository>
+		<!--<repository>-->
+			<!--<id>sonatype-oss-snapshots</id>-->
+			<!--<name>Sonatype OSS Snapshots Repository</name>-->
+			<!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+		<!--</repository>-->
 		<repository>
 			<id>spring-snapshots</id>
 			<name>Spring Snapshots</name>
