@@ -64,7 +64,7 @@
 		<java.version>1.8</java.version>
 		<mybatis-spring-boot-starter.version>1.2.1</mybatis-spring-boot-starter.version>
 		<mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
-		<thymeleaf.version>3.0.5.RELEASE</thymeleaf.version>
+		<thymeleaf.version>3.0.6.RELEASE</thymeleaf.version>
 		<thymeleaf-layout-dialect.version>2.2.1</thymeleaf-layout-dialect.version>
 		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
