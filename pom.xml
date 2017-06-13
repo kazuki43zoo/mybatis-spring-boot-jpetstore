@@ -69,7 +69,7 @@
 		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
 		<!-- for test -->
-		<selenide.version>4.4.2</selenide.version>
+		<selenide.version>4.4.3</selenide.version>
 		<selenium.version>3.3.1</selenium.version>
 		<htmlunit.version>2.24</htmlunit.version>
 		<selenium-htmlunit.version>${htmlunit.version}</selenium-htmlunit.version>
