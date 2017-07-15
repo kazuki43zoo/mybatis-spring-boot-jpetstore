@@ -75,6 +75,8 @@
 		<selenium-htmlunit.version>${htmlunit.version}</selenium-htmlunit.version>
 		<!-- for plugins -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
+		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -212,6 +214,38 @@
 						<version>${license-maven-plugin.version}</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>${jacocoArgs}</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<propertyName>jacocoArgs</propertyName>
+							<includes>
+								<include>com.kazuki43zoo.*</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>${coveralls-maven-plugin.version}</version>
 			</plugin>
 		</plugins>
 	</build>

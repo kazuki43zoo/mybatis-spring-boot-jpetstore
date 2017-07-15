@@ -8,6 +8,11 @@ jdk:
 addons:
   firefox: latest
 
+install: true
+
+script:
+  - mvn -U package jacoco:report coveralls:report
+
 cache:
   directories:
     - $HOME/.m2
