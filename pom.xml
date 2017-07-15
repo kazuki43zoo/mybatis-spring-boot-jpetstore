@@ -70,7 +70,7 @@
 		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
 		<spring-security.version>4.2.3.RELEASE</spring-security.version>
 		<!-- for test -->
-		<selenide.version>4.4.3</selenide.version>
+		<selenide.version>4.5.1</selenide.version>
 		<selenium.version>3.4.0</selenium.version>
 		<htmlunit.version>2.27</htmlunit.version>
 		<!-- for plugins -->
