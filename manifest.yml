@@ -1,0 +1,6 @@
+---
+applications:
+- name: jpetstore
+  memory: 450m
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_threads: 10}]'
