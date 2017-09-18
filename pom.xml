@@ -67,7 +67,7 @@
 		<thymeleaf.version>3.0.7.RELEASE</thymeleaf.version>
 		<thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
 		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
-		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
+		<thymeleaf-extras-java8time.version>3.0.1.RELEASE</thymeleaf-extras-java8time.version>
 		<spring-security.version>4.2.3.RELEASE</spring-security.version>
 		<!-- for test -->
 		<selenide.version>4.6</selenide.version>
