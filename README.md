@@ -34,8 +34,8 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Tomcat 8.5 (Embed Application Server)
 * Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.16
-* Selenide 4.6
-* Selenium 3.4
+* Selenide 4.7
+* Selenium 3.5
 * etc ...
 
 ## Run using Maven command
