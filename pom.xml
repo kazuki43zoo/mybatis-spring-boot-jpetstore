@@ -150,6 +150,10 @@
 			<version>${selenide.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>htmlunit-driver</artifactId>
+		</dependency>
 
 	</dependencies>
 
