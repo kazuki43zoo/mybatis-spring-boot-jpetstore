@@ -22,7 +22,7 @@
 
 	<groupId>com.kazuki43zoo.examples</groupId>
 	<artifactId>mybatis-spring-boot-jpetstore</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.1.0.RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>jpetstore on spring-boot + mybatis + thymeleaf</name>
