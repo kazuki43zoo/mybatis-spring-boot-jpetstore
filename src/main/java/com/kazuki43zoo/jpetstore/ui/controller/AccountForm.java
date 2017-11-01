@@ -21,9 +21,9 @@ import com.kazuki43zoo.jpetstore.component.validation.TelephoneNumber;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Email;
 import org.springframework.beans.BeanUtils;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;

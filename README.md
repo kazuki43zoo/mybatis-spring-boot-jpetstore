@@ -26,16 +26,17 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 
 ## Stacks
 
-* MyBatis Spring Boot Starter 1.3 (MyBatis 3.4, MyBatis Spring 1.3)
-* Spring Boot 1.5 (Spring Framework 4.3, Spring Security 4.2)
+* MyBatis Spring Boot Starter 2.0 (MyBatis 3.4, MyBatis Spring 2.0)
+* Spring Boot 2.0 (Spring Framework 5.0, Spring Security 5.0)
 * Thymeleaf 3.0
-* HSQLDB 2.3 (Embed Database)
-* Flyway 3.2 (DB Migration)
+* Hibernate Validator 6.0 (Bean Validation 2.0)
+* HSQLDB 2.4 (Embed Database)
+* Flyway 4.2 (DB Migration)
 * Tomcat 8.5 (Embed Application Server)
-* Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
+* Groovy 2.5 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.16
-* Selenide 4.7
-* Selenium 3.5
+* Selenide 4.8
+* Selenium 3.6
 * etc ...
 
 ## Run using Maven command
