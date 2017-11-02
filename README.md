@@ -34,8 +34,8 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Tomcat 8.5 (Embed Application Server)
 * Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.16
-* Selenide 4.7
-* Selenium 3.5
+* Selenide 4.8
+* Selenium 3.6
 * etc ...
 
 ## Run using Maven command
@@ -64,7 +64,7 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Run java command
 
   ```
-  $ java -jar target/mybatis-spring-boot-jpetstore-1.1.0-SNAPSHOT.jar
+  $ java -jar target/mybatis-spring-boot-jpetstore-1.1.1-SNAPSHOT.jar
   ```
 
 ## Perform integration test using Maven command
