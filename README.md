@@ -65,7 +65,7 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Run java command
 
   ```
-  $ java -jar target/mybatis-spring-boot-jpetstore-1.1.0-SNAPSHOT.jar
+  $ java -jar target/mybatis-spring-boot-jpetstore-2.0.0-SNAPSHOT.jar
   ```
 
 ## Perform integration test using Maven command
