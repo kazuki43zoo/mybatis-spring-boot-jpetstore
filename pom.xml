@@ -260,6 +260,7 @@
 			<properties>
 				<!-- coverall 4.3.0 or previous version does not work on Java 9, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
 				<coveralls.skip>true</coveralls.skip>
+				<sonar.skip>true</sonar.skip>
 			</properties>
 		</profile>
 	</profiles>
