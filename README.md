@@ -31,12 +31,12 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 * Thymeleaf 3.0
 * Hibernate Validator 6.0 (Bean Validation 2.0)
 * HSQLDB 2.4 (Embed Database)
-* Flyway 4.2 (DB Migration)
+* Flyway 5.0 (DB Migration)
 * Tomcat 8.5 (Embed Application Server)
 * Groovy 2.5 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.16
-* Selenide 4.8
-* Selenium 3.6
+* Selenide 4.9
+* Selenium 3.8
 * etc ...
 
 ## Run using Maven command
