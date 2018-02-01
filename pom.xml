@@ -67,7 +67,8 @@
 		<thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
 		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<thymeleaf-extras-java8time.version>3.0.1.RELEASE</thymeleaf-extras-java8time.version>
-		<spring-security.version>4.2.3.RELEASE</spring-security.version>
+		<spring-security.version>4.2.4.RELEASE</spring-security.version>
+		<spring.version>4.3.14.RELEASE</spring.version><!-- For fix https://pivotal.io/security/cve-2018-1199 -->
 		<!-- for test -->
 		<selenide.version>4.10.01</selenide.version>
 		<selenium.version>3.8.1</selenium.version>
