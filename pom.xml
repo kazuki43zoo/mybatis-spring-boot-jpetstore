@@ -68,7 +68,7 @@
 		<!-- for plugins -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -117,7 +117,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/lombok-edge.jar</systemPath> <!-- workaround for JDK10 (will change to 1.16.21)-->
 		</dependency>
 
 		<dependency>
@@ -256,6 +257,17 @@
 			<id>jdk9</id>
 			<activation>
 				<jdk>9</jdk>
+			</activation>
+			<properties>
+				<!-- coverall 4.3.0 or previous version does not work on Java 9, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
+				<coveralls.skip>true</coveralls.skip>
+				<sonar.skip>true</sonar.skip>
+			</properties>
+		</profile>
+		<profile>
+			<id>jdk10</id>
+			<activation>
+				<jdk>10</jdk>
 			</activation>
 			<properties>
 				<!-- coverall 4.3.0 or previous version does not work on Java 9, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->

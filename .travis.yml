@@ -2,17 +2,22 @@ sudo: required
 
 language: java
 
-jdk:
-  - oraclejdk9
-  - oraclejdk8
-
-addons:
-  firefox: latest
+matrix:
+  include:
+    - env: JDK='Oracle JDK 10'
+      install: . ./install-jdk.sh -F 10 -L BCL
+    - env: JDK='Oracle JDK 9'
+      jdk: oraclejdk9
+    - env: JDK='Oracle JDK 8'
+      jdk: oraclejdk8
 
 cache:
   directories:
     - $HOME/.m2
     - $HOME/.sonar/cache
+
+before_install:
+  - wget https://raw.githubusercontent.com/sormuras/bach/master/install-jdk.sh
 
 install: true
 
