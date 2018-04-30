@@ -5,6 +5,8 @@ language: java
 
 matrix:
   include:
+    - env: JDK='Oracle JDK 11'
+      install: . ./install-jdk.sh -F 11 -L BCL
     - env: JDK='Oracle JDK 10'
       install: . ./install-jdk.sh -F 10 -L BCL
     - env: JDK='Oracle JDK 9'
