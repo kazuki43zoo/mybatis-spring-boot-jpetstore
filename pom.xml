@@ -67,6 +67,7 @@
 		<thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
 		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<thymeleaf-extras-java8time.version>3.0.1.RELEASE</thymeleaf-extras-java8time.version>
+		<lombok.version>1.16.22</lombok.version>
 		<!-- for test -->
 		<selenide.version>4.11.2</selenide.version>
 		<selenium.version>3.11.0</selenium.version>
@@ -116,8 +117,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/jars/lombok-edge.jar</systemPath> <!-- workaround for JDK10 (will change to 1.16.21)-->
 		</dependency>
 
 		<dependency>
