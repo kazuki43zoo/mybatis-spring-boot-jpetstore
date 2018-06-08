@@ -63,6 +63,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<mybatis-spring-boot-starter.version>2.0.0-SNAPSHOT</mybatis-spring-boot-starter.version>
+		<!-- -->
+		<lombok.version>1.16.22</lombok.version>
 		<!-- for test -->
 		<selenide.version>4.11.2</selenide.version>
 		<!-- for plugins -->
@@ -117,8 +119,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/jars/lombok-edge.jar</systemPath> <!-- workaround for JDK10 (will change to 1.16.21)-->
 		</dependency>
 
 		<dependency>
