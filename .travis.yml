@@ -24,9 +24,9 @@ install: true
 script:
   - |
     if [ "$TRAVIS_BRANCH" != "master" -o "$TRAVIS_PULL_REQUEST" == "true" ]; then
-        ./mvnw -U package jacoco:report coveralls:report
+        ./mvnw -U verify jacoco:report coveralls:report
     fi
   - |
     if [ "$TRAVIS_PULL_REQUEST" == "false" -a "$TRAVIS_BRANCH" == "master" ]; then
-        ./mvnw -U package jacoco:report coveralls:report sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=${SONAR_TOKEN}
+        ./mvnw -U verify jacoco:report coveralls:report sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=${SONAR_TOKEN}
     fi
