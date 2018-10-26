@@ -279,6 +279,7 @@
 				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
 				<coveralls.skip>true</coveralls.skip>
 				<sonar.skip>true</sonar.skip>
+				<java.version>10</java.version>
 			</properties>
 		</profile>
 		<profile>
@@ -290,6 +291,7 @@
 				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
 				<coveralls.skip>true</coveralls.skip>
 				<sonar.skip>true</sonar.skip>
+				<java.version>11</java.version>
 			</properties>
 		</profile>
 	</profiles>
