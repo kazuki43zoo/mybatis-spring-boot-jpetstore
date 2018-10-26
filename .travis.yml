@@ -2,23 +2,17 @@ sudo: required
 
 language: java
 
-
-matrix:
-  include:
-    - env: JDK='Oracle JDK 10'
-      install: . ./install-jdk.sh -F 10 -L BCL
-    - env: JDK='Oracle JDK 9'
-      jdk: oraclejdk9
-    - env: JDK='Oracle JDK 8'
-      jdk: oraclejdk8
+jdk:
+  - openjdk8
+  - oraclejdk8
+  - openjdk10
+  - oraclejdk11
+  - openjdk11
 
 cache:
   directories:
     - $HOME/.m2
     - $HOME/.sonar/cache
-
-before_install:
-  - wget https://raw.githubusercontent.com/sormuras/bach/master/install-jdk.sh
 
 install: true
 
