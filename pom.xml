@@ -70,7 +70,7 @@
 		<!-- for plugins -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
 		<owasp-dependency-check-plugin.version>3.2.1</owasp-dependency-check-plugin.version>
 	</properties>
 
@@ -271,23 +271,23 @@
 
 	<profiles>
 		<profile>
-			<id>jdk9</id>
-			<activation>
-				<jdk>9</jdk>
-			</activation>
-			<properties>
-				<!-- coverall 4.3.0 or previous version does not work on Java 9, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
-				<coveralls.skip>true</coveralls.skip>
-				<sonar.skip>true</sonar.skip>
-			</properties>
-		</profile>
-		<profile>
 			<id>jdk10</id>
 			<activation>
 				<jdk>10</jdk>
 			</activation>
 			<properties>
-				<!-- coverall 4.3.0 or previous version does not work on Java 9, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
+				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
+				<coveralls.skip>true</coveralls.skip>
+				<sonar.skip>true</sonar.skip>
+			</properties>
+		</profile>
+		<profile>
+			<id>jdk11</id>
+			<activation>
+				<jdk>11</jdk>
+			</activation>
+			<properties>
+				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
 				<coveralls.skip>true</coveralls.skip>
 				<sonar.skip>true</sonar.skip>
 			</properties>
