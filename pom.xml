@@ -78,6 +78,9 @@
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
 		<owasp-dependency-check-plugin.version>3.2.1</owasp-dependency-check-plugin.version>
+
+		<!-- For preventing CVE error -->
+		<jackson.version>2.9.8</jackson.version>
 	</properties>
 
 	<dependencies>
