@@ -69,7 +69,7 @@
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
-		<owasp-dependency-check-plugin.version>3.2.1</owasp-dependency-check-plugin.version>
+		<owasp-dependency-check-plugin.version>4.0.2</owasp-dependency-check-plugin.version>
 	</properties>
 
 	<dependencies>
