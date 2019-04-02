@@ -9,16 +9,6 @@ jdk:
   - openjdk11
   - openjdk12
 
-matrix:
-  include:
-    - jdk: openjdk10
-      install:
-        # Download dependency artifacts using JDK8 (Setting for prevent "PKIX path building failed")
-        - export ORIGINAL_JAVA_HOME=$JAVA_HOME
-        - jdk_switcher use openjdk8
-        - ./mvnw -U install -q -DskipTests=true
-        - export JAVA_HOME=$ORIGINAL_JAVA_HOME
-
 cache:
   directories:
     - $HOME/.m2
