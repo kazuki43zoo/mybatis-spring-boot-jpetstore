@@ -1,7 +1,7 @@
 # mybatis-spring-boot-jpetstore
 
 [![Build Status](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore.svg?branch=master)](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ac9fe028b1c49a4a61e27cc54cb3b19)](https://www.codacy.com/app/kazuki43zoo/mybatis-spring-boot-jpetstore?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kazuki43zoo/mybatis-spring-boot-jpetstore&amp;utm_campaign=Badge_Grade)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.kazuki43zoo.examples%3Amybatis-spring-boot-jpetstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.kazuki43zoo.examples%3Amybatis-spring-boot-jpetstore)
 [![Coverage Status](https://coveralls.io/repos/github/kazuki43zoo/mybatis-spring-boot-jpetstore/badge.svg?branch=master)](https://coveralls.io/github/kazuki43zoo/mybatis-spring-boot-jpetstore?branch=master)
 
 This sample is a web application built on MyBatis, Spring Boot(Spring MVC, Spring Security) and Thymeleaf.
