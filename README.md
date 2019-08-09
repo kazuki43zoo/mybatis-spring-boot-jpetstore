@@ -26,7 +26,7 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 
 ## Stacks
 
-* MyBatis Spring Boot Starter 2.1 (MyBatis 3.5, MyBatis Spring 2.0) SNAPSHOT version
+* MyBatis Spring Boot Starter 2.1 (MyBatis 3.5, MyBatis Spring 2.0)
 * Spring Boot 2.2 (Spring Framework 5.2, Spring Security 5.2)
 * Thymeleaf 3.0
 * Hibernate Validator 6.0 (Bean Validation 2.0)
