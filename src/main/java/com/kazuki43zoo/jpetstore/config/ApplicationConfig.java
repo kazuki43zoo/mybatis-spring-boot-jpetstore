@@ -15,15 +15,16 @@
  */
 package com.kazuki43zoo.jpetstore.config;
 
+import java.time.Clock;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
-
-import java.time.Clock;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author Kazuki Shimizu
@@ -31,42 +32,29 @@ import java.util.List;
 @Configuration
 public class ApplicationConfig {
 
-	@Bean
-	Clock clock() {
-		return Clock.systemDefaultZone();
-	}
+  @Bean
+  Clock clock() {
+    return Clock.systemDefaultZone();
+  }
 
-	@Bean
-	PasswordEncoder passwordEncoder() {
-		return new Pbkdf2PasswordEncoder();
-	}
+  @Bean
+  PasswordEncoder passwordEncoder() {
+    return new Pbkdf2PasswordEncoder();
+  }
 
-	@Bean
-	List<String> clCreditCardTypes() {
-		List<String> cardList = new ArrayList<>();
-		cardList.add("Visa");
-		cardList.add("MasterCard");
-		cardList.add("American Express");
-		return Collections.unmodifiableList(cardList);
-	}
+  @Bean
+  List<String> clCreditCardTypes() {
+    return Arrays.asList("Visa", "MasterCard", "American Express");
+  }
 
-	@Bean
-	List<String> clCategories() {
-		List<String> categoryList = new ArrayList<>();
-		categoryList.add("FISH");
-		categoryList.add("DOGS");
-		categoryList.add("REPTILES");
-		categoryList.add("CATS");
-		categoryList.add("BIRDS");
-		return Collections.unmodifiableList(categoryList);
-	}
+  @Bean
+  List<String> clCategories() {
+    return Arrays.asList("FISH", "DOGS", "REPTILES", "CATS", "BIRDS");
+  }
 
-	@Bean
-	List<String> clLanguages() {
-		List<String> languageList = new ArrayList<>();
-		languageList.add("English");
-		languageList.add("Japanese");
-		return Collections.unmodifiableList(languageList);
-	}
+  @Bean
+  List<String> clLanguages() {
+		return Arrays.asList("English", "Japanese");
+  }
 
 }
