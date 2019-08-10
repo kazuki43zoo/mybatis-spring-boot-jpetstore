@@ -1,5 +1,5 @@
 /*
- *    Copyright 2016-2017 the original author or authors.
+ *    Copyright 2016-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -32,17 +32,17 @@ import java.util.List;
 public class ApplicationConfig {
 
 	@Bean
-	protected Clock clock() {
+	Clock clock() {
 		return Clock.systemDefaultZone();
 	}
 
 	@Bean
-	protected PasswordEncoder passwordEncoder() {
+	PasswordEncoder passwordEncoder() {
 		return new Pbkdf2PasswordEncoder();
 	}
 
 	@Bean
-	protected List<String> clCreditCardTypes() {
+	List<String> clCreditCardTypes() {
 		List<String> cardList = new ArrayList<>();
 		cardList.add("Visa");
 		cardList.add("MasterCard");
@@ -51,7 +51,7 @@ public class ApplicationConfig {
 	}
 
 	@Bean
-	protected List<String> clCategories() {
+	List<String> clCategories() {
 		List<String> categoryList = new ArrayList<>();
 		categoryList.add("FISH");
 		categoryList.add("DOGS");
@@ -62,7 +62,7 @@ public class ApplicationConfig {
 	}
 
 	@Bean
-	protected List<String> clLanguages() {
+	List<String> clLanguages() {
 		List<String> languageList = new ArrayList<>();
 		languageList.add("English");
 		languageList.add("Japanese");
