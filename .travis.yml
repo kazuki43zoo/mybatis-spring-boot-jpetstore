@@ -9,6 +9,11 @@ jdk:
   - openjdk13
   - openjdk-ea
 
+matrix:
+  allow_failures:
+    - jdk: openjdk13
+    - jdk: openjdk-ea
+
 cache:
   directories:
     - $HOME/.m2
@@ -19,9 +24,9 @@ install: true
 script:
   - |
     if [ "$TRAVIS_BRANCH" != "master" -o "$TRAVIS_PULL_REQUEST" == "true" ]; then
-        ./mvnw -U verify jacoco:report coveralls:report
+        ./mvnw -U verify jacoco:report coveralls:report -B -q
     fi
   - |
     if [ "$TRAVIS_PULL_REQUEST" == "false" -a "$TRAVIS_BRANCH" == "master" ]; then
-        ./mvnw -U verify jacoco:report coveralls:report sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}
+        ./mvnw -U verify jacoco:report coveralls:report sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}  -B -q
     fi
