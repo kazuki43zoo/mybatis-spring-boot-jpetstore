@@ -15,6 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.service;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -24,6 +25,7 @@ import org.springframework.security.core.userdetails.User;
  * @author Kazuki Shimizu
  */
 @Getter
+@EqualsAndHashCode(callSuper = false)
 public class AccountUserDetails extends User {
 
 	private static final long serialVersionUID = -3065955491112229927L;
