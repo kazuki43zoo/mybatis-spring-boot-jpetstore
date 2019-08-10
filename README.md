@@ -1,7 +1,7 @@
 # mybatis-spring-boot-jpetstore
 
 [![Build Status](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore.svg?branch=master)](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ac9fe028b1c49a4a61e27cc54cb3b19)](https://www.codacy.com/app/kazuki43zoo/mybatis-spring-boot-jpetstore?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kazuki43zoo/mybatis-spring-boot-jpetstore&amp;utm_campaign=Badge_Grade)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.kazuki43zoo.examples%3Amybatis-spring-boot-jpetstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.kazuki43zoo.examples%3Amybatis-spring-boot-jpetstore)
 [![Coverage Status](https://coveralls.io/repos/github/kazuki43zoo/mybatis-spring-boot-jpetstore/badge.svg?branch=master)](https://coveralls.io/github/kazuki43zoo/mybatis-spring-boot-jpetstore?branch=master)
 
 This sample is a web application built on MyBatis, Spring Boot(Spring MVC, Spring Security) and Thymeleaf.
@@ -26,17 +26,17 @@ Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
 
 ## Stacks
 
-* MyBatis Spring Boot Starter 2.0 (MyBatis 3.5, MyBatis Spring 2.0) SNAPSHOT version
-* Spring Boot 2.1 (Spring Framework 5.1, Spring Security 5.1)
+* MyBatis Spring Boot Starter 2.1 (MyBatis 3.5, MyBatis Spring 2.0)
+* Spring Boot 2.2 (Spring Framework 5.2, Spring Security 5.2)
 * Thymeleaf 3.0
 * Hibernate Validator 6.0 (Bean Validation 2.0)
-* HSQLDB 2.4 (Embed Database)
+* HSQLDB 2.5 (Embed Database)
 * Flyway 5.2 (DB Migration)
 * Tomcat 9.0 (Embed Application Server)
-* Groovy 2.4 (Use multiple line string on MyBatis Mapper method)
+* Groovy 2.5 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.18
-* Selenide 5.1
-* Selenium 3.14
+* Selenide 5.2
+* Selenium 3.141
 * etc ...
 
 ## Run using Maven command
