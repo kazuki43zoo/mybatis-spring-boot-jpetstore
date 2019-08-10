@@ -23,9 +23,9 @@ install: true
 script:
   - |
     if [ "$TRAVIS_BRANCH" != "master" -o "$TRAVIS_PULL_REQUEST" == "true" ]; then
-        ./mvnw -U verify jacoco:report coveralls:report -B -q
+        ./mvnw -U verify jacoco:report coveralls:report -B
     fi
   - |
     if [ "$TRAVIS_PULL_REQUEST" == "false" -a "$TRAVIS_BRANCH" == "master" ]; then
-        ./mvnw -U verify jacoco:report coveralls:report sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}  -B -q
+        ./mvnw -U verify jacoco:report coveralls:report sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}  -B
     fi
