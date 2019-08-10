@@ -32,12 +32,14 @@ public class RepeatedFieldValidator implements ConstraintValidator<RepeatedField
 	private String repeatedField;
 	private String message;
 
+	@Override
 	public void initialize(RepeatedField constraintAnnotation) {
 		this.field = constraintAnnotation.field();
 		this.repeatedField = "repeated" + StringUtils.capitalize(field);
 		this.message = constraintAnnotation.message();
 	}
 
+	@Override
 	public boolean isValid(Object value, ConstraintValidatorContext context) {
 		BeanWrapper beanWrapper = new BeanWrapperImpl(value);
 		Object fieldValue = beanWrapper.getPropertyValue(field);

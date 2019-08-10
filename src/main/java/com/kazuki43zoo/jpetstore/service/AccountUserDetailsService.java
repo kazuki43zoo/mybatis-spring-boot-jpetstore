@@ -34,7 +34,7 @@ public class AccountUserDetailsService implements UserDetailsService {
 	private final AccountMapper accountMapper;
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) {
 		return Optional.ofNullable(accountMapper.getAccountByUsername(username))
 				.map(AccountUserDetails::new)
 				.orElseThrow(() -> new UsernameNotFoundException(username));
