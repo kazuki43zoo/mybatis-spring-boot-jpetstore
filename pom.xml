@@ -293,6 +293,54 @@
 				<java.version>12</java.version>
 			</properties>
 		</profile>
+		<profile>
+			<id>jdk12</id>
+			<activation>
+				<jdk>12</jdk>
+			</activation>
+			<properties>
+				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
+				<coveralls.skip>true</coveralls.skip>
+				<sonar.skip>true</sonar.skip>
+				<java.version>12</java.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>jdk12</id>
+			<activation>
+				<jdk>12</jdk>
+			</activation>
+			<properties>
+				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
+				<coveralls.skip>true</coveralls.skip>
+				<sonar.skip>true</sonar.skip>
+				<java.version>12</java.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>jdk13</id>
+			<activation>
+				<jdk>13</jdk>
+			</activation>
+			<properties>
+				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
+				<coveralls.skip>true</coveralls.skip>
+				<sonar.skip>true</sonar.skip>
+				<java.version>13</java.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>jdk14</id>
+			<activation>
+				<jdk>14</jdk>
+			</activation>
+			<properties>
+				<!-- coverall 4.3.0 or previous version does not work on Java 9+, see https://github.com/trautonen/coveralls-maven-plugin/issues/112 -->
+				<coveralls.skip>true</coveralls.skip>
+				<sonar.skip>true</sonar.skip>
+				<java.version>14</java.version>
+			</properties>
+		</profile>
 	</profiles>
 
 	<repositories>
