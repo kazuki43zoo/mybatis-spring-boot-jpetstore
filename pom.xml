@@ -65,7 +65,7 @@
 		<mybatis-spring-boot-starter.version>2.1.0</mybatis-spring-boot-starter.version>
 		<jackson.version>2.9.9.20190807</jackson.version>
 		<!-- for test -->
-		<selenide.version>5.2.8</selenide.version>
+		<selenide.version>5.3.0</selenide.version>
 		<!-- for plugins -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
