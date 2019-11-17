@@ -18,7 +18,6 @@ package com.kazuki43zoo.jpetstore;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.junit.ScreenShooter;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -33,11 +32,21 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Configuration.*;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.*;
-import static org.assertj.core.api.Assertions.*;
+import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Configuration.browser;
+import static com.codeborne.selenide.Configuration.fastSetValue;
+import static com.codeborne.selenide.Configuration.headless;
+import static com.codeborne.selenide.Configuration.timeout;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.title;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author Kazuki Shimizu
@@ -78,27 +87,27 @@ public class JpetstoreApplicationTests {
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 		// Move to sign in page & sign
 		$(By.linkText("Sign In")).click();
 		$(By.name("username")).val("j2ee");
 		$(By.name("password")).val("j2ee");
 		$(By.id("login")).click();
-		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldBe(text("ABC"));
+		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldHave(text("ABC"));
 
 		// Search items
 		$(By.name("keywords")).val("fish");
 		$(By.id("searchProducts")).click();
-		$$(By.cssSelector("#Catalog table tr")).shouldHaveSize(3);
+		$$(By.cssSelector("#Catalog table tr")).shouldHave(size(3));
 
 		// Select item
 		$(By.linkText("Fresh Water fish from China")).click();
-		$(By.cssSelector("#Catalog h2")).shouldBe(text("Goldfish"));
+		$(By.cssSelector("#Catalog h2")).shouldHave(text("Goldfish"));
 
 		// Add a item to the cart
 		$(By.linkText("Add to Cart")).click();
-		$(By.cssSelector("#Catalog h2")).shouldBe(text("Shopping Cart"));
+		$(By.cssSelector("#Catalog h2")).shouldHave(text("Shopping Cart"));
 
 		// Checkout cart items
 		$(By.linkText("Proceed to Checkout")).click();
@@ -108,20 +117,20 @@ public class JpetstoreApplicationTests {
 		$(By.name("creditCard")).val("9999999999");
 		$(By.name("expiryDate")).val("04/2020");
 		$(By.name("continue")).click();
-		$(By.id("confirmMessage")).shouldBe(text("Please confirm the information below and then press submit..."));
+		$(By.id("confirmMessage")).shouldHave(text("Please confirm the information below and then press submit..."));
 
 		// Submit order
 		$(By.id("order")).click();
-		$(By.cssSelector(".messages li")).shouldBe(text("Thank you, your order has been submitted."));
+		$(By.cssSelector(".messages li")).shouldHave(text("Thank you, your order has been submitted."));
 		String orderId = $(By.id("orderId")).text();
 
 		// Show profile page
 		$(By.linkText("My Account")).click();
-		$(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
+		$(By.cssSelector("#Catalog h3")).shouldHave(text("User Information"));
 
 		// Show orders
 		$(By.linkText("My Orders")).click();
-		$(By.cssSelector("#Content h2")).shouldBe(text("My Orders"));
+		$(By.cssSelector("#Content h2")).shouldHave(text("My Orders"));
 
 		// Show order detail
 		$(By.linkText(orderId)).click();
@@ -129,7 +138,7 @@ public class JpetstoreApplicationTests {
 
 		// Sign out
 		$(By.linkText("Sign Out")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 	}
 
@@ -141,24 +150,24 @@ public class JpetstoreApplicationTests {
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 		// Move to sign in page & sign
 		$(By.linkText("Sign In")).click();
 		$(By.name("username")).val("j2ee");
 		$(By.name("password")).val("j2ee");
 		$(By.id("login")).click();
-		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldBe(text("ABC"));
+		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldHave(text("ABC"));
 
 		// Show profile page
 		$(By.linkText("My Account")).click();
-		$(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
-		$$(By.cssSelector("#Catalog table td")).get(1).shouldBe(text("j2ee"));
+		$(By.cssSelector("#Catalog h3")).shouldHave(text("User Information"));
+		$$(By.cssSelector("#Catalog table td")).get(1).shouldHave(text("j2ee"));
 
 		// Edit account
 		$(By.id("save")).click();
-		$(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
-		$$(By.cssSelector("#Catalog table td")).get(1).shouldBe(text("j2ee"));
+		$(By.cssSelector("#Catalog h3")).shouldHave(text("User Information"));
+		$$(By.cssSelector("#Catalog table td")).get(1).shouldHave(text("j2ee"));
 	}
 
 	@Test
@@ -169,15 +178,15 @@ public class JpetstoreApplicationTests {
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 		// Move to sign in page & sign
 		$(By.linkText("Sign In")).click();
-		$(By.cssSelector("#Catalog p")).shouldBe(text("Please enter your username and password."));
+		$(By.cssSelector("#Catalog p")).shouldHave(text("Please enter your username and password."));
 
 		// Move to use registration page
 		$(By.linkText("Register Now!")).click();
-		$(By.cssSelector("#Catalog h3")).shouldBe(text("User Information"));
+		$(By.cssSelector("#Catalog h3")).shouldHave(text("User Information"));
 
 		// Create a new user
 		String userId = String.valueOf(System.currentTimeMillis());
@@ -199,13 +208,13 @@ public class JpetstoreApplicationTests {
 		$(By.name("listOption")).setSelected(true);
 		$(By.name("bannerOption")).setSelected(true);
 		$(By.id("save")).click();
-		$(By.cssSelector(".messages li")).shouldBe(text("Your account has been created. Please try login !!"));
+		$(By.cssSelector(".messages li")).shouldHave(text("Your account has been created. Please try login !!"));
 
 		// Move to sign in page & sign
 		$(By.name("username")).val(userId);
 		$(By.name("password")).val("password");
 		$(By.id("login")).click();
-		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldBe(text("Jon"));
+		$(By.id("WelcomeContent")).$(By.tagName("span")).shouldHave(text("Jon"));
 
 	}
 
@@ -217,31 +226,31 @@ public class JpetstoreApplicationTests {
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 		// Move to category
 		$(By.cssSelector("#SidebarContent a")).click();
-		$(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
+		$(By.cssSelector("#Catalog h2")).shouldHave(text("Fish"));
 
 		// Move to items
 		$(By.linkText("FI-SW-01")).click();
-		$(By.cssSelector("#Catalog h2")).shouldBe(text("Angelfish"));
+		$(By.cssSelector("#Catalog h2")).shouldHave(text("Angelfish"));
 
 		// Move to item detail
 		$(By.linkText("EST-1")).click();
-		$$(By.cssSelector("#Catalog table tr td")).get(2).shouldBe(text("Large Angelfish"));
+		$$(By.cssSelector("#Catalog table tr td")).get(2).shouldHave(text("Large Angelfish"));
 
 		// Back to items
 		$(By.linkText("Return to FI-SW-01")).click();
-		$(By.cssSelector("#Catalog h2")).shouldBe(text("Angelfish"));
+		$(By.cssSelector("#Catalog h2")).shouldHave(text("Angelfish"));
 
 		// Back to category
 		$(By.linkText("Return to FISH")).click();
-		$(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
+		$(By.cssSelector("#Catalog h2")).shouldHave(text("Fish"));
 
 		// Back to the top page
 		$(By.linkText("Return to Main Menu")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 	}
 
@@ -254,11 +263,11 @@ public class JpetstoreApplicationTests {
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 		// Move to cart
 		$(By.name("img_cart")).click();
-		$(By.cssSelector("#Catalog h2")).shouldBe(text("Shopping Cart"));
+		$(By.cssSelector("#Catalog h2")).shouldHave(text("Shopping Cart"));
 
 	}
 
@@ -273,7 +282,7 @@ public class JpetstoreApplicationTests {
 
 		// Move to the top page
 		$(By.linkText("Enter the Store")).click();
-		$(By.id("WelcomeContent")).shouldBe(text(""));
+		$(By.id("WelcomeContent")).shouldHave(exactText(""));
 
 		// Move to help
 		$(By.linkText("?")).click();
@@ -282,8 +291,6 @@ public class JpetstoreApplicationTests {
 		windows.remove(mainWindow);
 		switchTo().window(windows.iterator().next());
 
-		$(By.cssSelector("#Content h1")).shouldBe(text("JPetStore Demo"));
-
+		$(By.cssSelector("#Content h1")).shouldHave(text("JPetStore Demo"));
 	}
-
 }
