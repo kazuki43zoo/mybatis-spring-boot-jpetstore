@@ -5,13 +5,12 @@ language: java
 jdk:
   - openjdk8
   - openjdk11
-  - openjdk12
-  - openjdk13
-  - openjdk-ea
+  - openjdk14
+  - openjdk15
 
 matrix:
   allow_failures:
-    - jdk: openjdk-ea
+    - jdk: openjdk15
 
 cache:
   directories:
