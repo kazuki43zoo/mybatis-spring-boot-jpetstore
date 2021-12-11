@@ -15,28 +15,23 @@ In this section, we will walk through this sample to understand how is it built 
 > This sample application is under development.
 > If you found an issue, please report from [here](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/issues/new).
 
-## Demo
-
-The Demo application is running on the [Pivotal Web Services](https://run.pivotal.io/).
-Let's play on [https://jpetstore.cfapps.io/](https://jpetstore.cfapps.io/).
-
 ## Requirements
 
 * Java 8+ (JDK 1.8+)
 
 ## Stacks
 
-* MyBatis Spring Boot Starter 2.1 (MyBatis 3.5, MyBatis Spring 2.0)
-* Spring Boot 2.3 (Spring Framework 5.2, Spring Security 5.3)
+* MyBatis Spring Boot Starter 2.2 (MyBatis 3.5, MyBatis Spring 2.0)
+* Spring Boot 2.6 (Spring Framework 5.3, Spring Security 5.6)
 * Thymeleaf 3.0
-* Hibernate Validator 6.1 (Bean Validation 2.0)
+* Hibernate Validator 6.2 (Bean Validation 2.0)
 * HSQLDB 2.5 (Embed Database)
-* Flyway 6.4 (DB Migration)
+* Flyway 8.0 (DB Migration)
 * Tomcat 9.0 (Embed Application Server)
-* Groovy 2.5 (Use multiple line string on MyBatis Mapper method)
+* Groovy 3.0 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.18
-* Selenide 5.12
-* Selenium 3.141
+* Selenide 6.1
+* Selenium 4.1
 * etc ...
 
 ## Run using Maven command
