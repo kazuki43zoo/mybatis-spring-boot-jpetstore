@@ -1,8 +1,7 @@
 # mybatis-spring-boot-jpetstore
 
-[![Build Status](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore.svg?branch=master)](https://travis-ci.org/kazuki43zoo/mybatis-spring-boot-jpetstore)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.kazuki43zoo.examples%3Amybatis-spring-boot-jpetstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.kazuki43zoo.examples%3Amybatis-spring-boot-jpetstore)
-[![Coverage Status](https://coveralls.io/repos/github/kazuki43zoo/mybatis-spring-boot-jpetstore/badge.svg?branch=master)](https://coveralls.io/github/kazuki43zoo/mybatis-spring-boot-jpetstore?branch=master)
+[![Java CI](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/actions/workflows/ci.yaml/badge.svg)](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/actions/workflows/ci.yaml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kazuki43zoo_mybatis-spring-boot-jpetstore&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kazuki43zoo_mybatis-spring-boot-jpetstore)
 
 This sample is a web application built on MyBatis, Spring Boot(Spring MVC, Spring Security) and Thymeleaf.
 This is another implementation of MyBatis JPetStore sample application (https://github.com/mybatis/jpetstore-6).
