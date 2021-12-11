@@ -1,5 +1,5 @@
 /*
- *    Copyright 2016-2019 the original author or authors.
+ *    Copyright 2016-2021 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -17,16 +17,12 @@ package com.kazuki43zoo.jpetstore;
 
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.junit.ScreenShooter;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -51,18 +47,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author Kazuki Shimizu
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class JpetstoreApplicationTests {
 
 	@LocalServerPort
 	private int port;
 
-	@Rule
-	public ScreenShooter screenShooter = ScreenShooter.failedTests();
+//	@Rule
+//	public ScreenShooter screenShooter = ScreenShooter.failedTests();
 
-	@Before
-	public void setupSelenide() {
+	@BeforeEach
+	void setupSelenide() {
 		browser = Browsers.CHROME;
 		headless = true;
 		timeout = TimeUnit.SECONDS.toMillis(10);
@@ -70,8 +65,8 @@ public class JpetstoreApplicationTests {
 		fastSetValue = true;
 	}
 
-	@After
-	public void logout() {
+	@AfterEach
+	void logout() {
 		SelenideElement element = $(By.linkText("Sign Out"));
 		if (element.exists()) {
 			element.click();
@@ -79,7 +74,7 @@ public class JpetstoreApplicationTests {
 	}
 
 	@Test
-	public void testOrder() {
+	void testOrder() {
 
 		// Open the home page
 		open("/");
