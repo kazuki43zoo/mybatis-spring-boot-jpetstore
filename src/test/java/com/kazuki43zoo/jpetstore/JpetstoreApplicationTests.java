@@ -50,7 +50,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Kazuki Shimizu
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class JpetstoreApplicationTests {
+class JpetstoreApplicationTests {
 
   @LocalServerPort
   private int port;

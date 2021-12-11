@@ -1,5 +1,5 @@
 /*
- *    Copyright 2016-2017 the original author or authors.
+ *    Copyright 2016-2021 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -41,89 +41,90 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MyOrderController {
 
-	private final OrderService orderService;
-	private final Cart cart;
+  private final OrderService orderService;
+  private final Cart cart;
 
-	@ModelAttribute("orderForm")
-	public OrderForm setUpForm() {
-		return new OrderForm();
-	}
+  @ModelAttribute("orderForm")
+  public OrderForm setUpForm() {
+    return new OrderForm();
+  }
 
-	@GetMapping(path = "/create", params = "form")
-	public String createForm(OrderForm form, @AuthenticationPrincipal(expression = "account") Account account) {
-		if (cart.isEmpty()) {
-			return "redirect:/cart";
-		}
-		form.initialize(account);
-		return "order/orderBasicForm";
-	}
+  @GetMapping(path = "/create", params = "form")
+  public String createForm(OrderForm form, @AuthenticationPrincipal(expression = "account") Account account) {
+    if (cart.isEmpty()) {
+      return "redirect:/cart";
+    }
+    form.initialize(account);
+    return "order/orderBasicForm";
+  }
 
-	@PostMapping(path = "/create", params = "continue")
-	public String createContinue(@Validated OrderForm form, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			model.addAttribute(
-					new Messages().error("Input values are invalid. Please confirm error messages."));
-			return "order/orderBasicForm";
-		}
-		if (form.isShippingAddressRequired()) {
-			return "order/orderShippingForm";
-		} else {
-			return "order/orderConfirm";
-		}
-	}
+  @PostMapping(path = "/create", params = "continue")
+  public String createContinue(@Validated OrderForm form, BindingResult result, Model model) {
+    if (result.hasErrors()) {
+      model.addAttribute(newValidationErrorMessages());
+      return "order/orderBasicForm";
+    }
+    if (form.isShippingAddressRequired()) {
+      return "order/orderShippingForm";
+    } else {
+      return "order/orderConfirm";
+    }
+  }
 
-	@PostMapping(path = "/create", params = "confirm")
-	public String createConfirm(@Validated OrderForm form, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			model.addAttribute(
-					new Messages().error("Input values are invalid. Please confirm error messages."));
-			return "order/orderShippingForm";
-		}
-		return "order/orderConfirm";
-	}
+  @PostMapping(path = "/create", params = "confirm")
+  public String createConfirm(@Validated OrderForm form, BindingResult result, Model model) {
+    if (result.hasErrors()) {
+      model.addAttribute(newValidationErrorMessages());
+      return "order/orderShippingForm";
+    }
+    return "order/orderConfirm";
+  }
 
-	@PostMapping("/create")
-	public String create(@Validated @ModelAttribute(binding = false) OrderForm form,
-						 BindingResult result,
-						 @AuthenticationPrincipal(expression = "account") Account account,
-						 RedirectAttributes redirectAttributes, SessionStatus sessionStatus) {
-		if (cart.isEmpty()) {
-			return "redirect:/cart";
-		}
+  @PostMapping("/create")
+  public String create(@Validated @ModelAttribute(binding = false) OrderForm form,
+                       BindingResult result,
+                       @AuthenticationPrincipal(expression = "account") Account account,
+                       RedirectAttributes redirectAttributes, SessionStatus sessionStatus) {
+    if (cart.isEmpty()) {
+      return "redirect:/cart";
+    }
 
-		if (result.hasErrors()) {
-			redirectAttributes.addFlashAttribute(
-					new Messages().error("Input values are invalid. Please confirm error messages."));
-			return "redirect:/my/orders/create?from";
-		}
+    if (result.hasErrors()) {
+      redirectAttributes.addFlashAttribute(newValidationErrorMessages());
+      return "redirect:/my/orders/create?from";
+    }
 
-		Order order = form.toOrder(cart);
-		orderService.createOrder(order, account);
+    Order order = form.toOrder(cart);
+    orderService.createOrder(order, account);
 
-		redirectAttributes.addFlashAttribute(
-				new Messages().success("Thank you, your order has been submitted."));
+    redirectAttributes.addFlashAttribute(
+        new Messages().success("Thank you, your order has been submitted."));
 
-		redirectAttributes.addAttribute("orderId", order.getOrderId());
+    redirectAttributes.addAttribute("orderId", order.getOrderId());
 
-		cart.clear();
-		sessionStatus.setComplete();
+    cart.clear();
+    sessionStatus.setComplete();
 
-		return "redirect:/my/orders/{orderId}";
-	}
+    return "redirect:/my/orders/{orderId}";
+  }
 
 
-	@GetMapping
-	public String viewOrders(@AuthenticationPrincipal(expression = "account") Account account, Model model) {
-		List<Order> orderList = orderService.getOrdersByUsername(account.getUsername());
-		model.addAttribute(orderList);
-		return "order/orders";
-	}
+  @GetMapping
+  public String viewOrders(@AuthenticationPrincipal(expression = "account") Account account, Model model) {
+    List<Order> orderList = orderService.getOrdersByUsername(account.getUsername());
+    model.addAttribute(orderList);
+    return "order/orders";
+  }
 
-	@GetMapping("/{orderId}")
-	public String viewOrder(@AuthenticationPrincipal(expression = "account") Account account, @PathVariable int orderId, Model model) {
-		Order order = orderService.getOrder(account.getUsername(), orderId);
-		model.addAttribute(order);
-		return "order/order";
-	}
+  @GetMapping("/{orderId}")
+  public String viewOrder(@AuthenticationPrincipal(expression = "account") Account account, @PathVariable int orderId, Model model) {
+    Order order = orderService.getOrder(account.getUsername(), orderId);
+    model.addAttribute(order);
+    return "order/order";
+  }
+
+  private Messages newValidationErrorMessages() {
+    return new Messages().error("Input values are invalid. Please confirm error messages.");
+  }
 
 }
