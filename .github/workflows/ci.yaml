@@ -38,4 +38,4 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: ${{ matrix.distribution }}
       - name: Test with Maven
-        run: ./mvnw verify -B
+        run: ./mvnw verify -B -D"license.skip=true"
