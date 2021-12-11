@@ -61,13 +61,13 @@ public class CartController {
 			Item item = catalogService.getItem(itemId);
 			cart.addItem(item, isInStock);
 		}
-		return "redirect:/cart";
+		return "redirect:/cart"; // NOSONAR
 	}
 
 	@GetMapping(params = "remove")
 	public String removeCartItem(@RequestParam String itemId) {
 		cart.removeItemById(itemId);
-		return "redirect:/cart";
+		return "redirect:/cart"; // NOSONAR
 	}
 
 	@PostMapping(params = "update")
@@ -84,7 +84,7 @@ public class CartController {
 				cart.removeItemById(x.getItemId());
 			}
 		});
-		return "redirect:/cart";
+		return "redirect:/cart"; // NOSONAR
 	}
 
 }

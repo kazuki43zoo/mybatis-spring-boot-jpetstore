@@ -35,6 +35,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @ReportAsSingleViolation
 @Pattern(regexp = "^(\\d+-\\d+-\\d+|\\d+ \\d+ \\d+|\\d+)$")
+@SuppressWarnings("common-java:DuplicatedBlocks")
 public @interface TelephoneNumber {
 
 	String message() default "{com.kazuki43zoo.jpetstore.component.validation.TelephoneNumber.message}";
