@@ -63,7 +63,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<mybatis-spring-boot-starter.version>2.2.1</mybatis-spring-boot-starter.version>
+		<mybatis-spring-boot-starter.version>2.2.2</mybatis-spring-boot-starter.version>
 		<thymeleaf.version>3.0.14.RELEASE</thymeleaf.version>
 		<selenium.version>4.1.0</selenium.version>
 		<!-- for test -->
