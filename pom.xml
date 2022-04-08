@@ -67,7 +67,7 @@
 		<thymeleaf.version>3.0.14.RELEASE</thymeleaf.version>
 		<selenium.version>4.1.0</selenium.version>
 		<!-- for test -->
-		<selenide.version>6.2.1</selenide.version>
+		<selenide.version>6.4.0</selenide.version>
 		<!-- for plugins -->
 		<license-maven-plugin.version>3.0</license-maven-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
