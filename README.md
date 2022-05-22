@@ -1,6 +1,7 @@
 # mybatis-spring-boot-jpetstore
 
 [![Java CI](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/actions/workflows/ci.yaml/badge.svg)](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/actions/workflows/ci.yaml)
+[![Dependency Check](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/actions/workflows/dependency-check.yaml/badge.svg)](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/actions/workflows/dependency-check.yaml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kazuki43zoo_mybatis-spring-boot-jpetstore&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kazuki43zoo_mybatis-spring-boot-jpetstore)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kazuki43zoo_mybatis-spring-boot-jpetstore&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kazuki43zoo_mybatis-spring-boot-jpetstore)
 
