@@ -23,15 +23,15 @@ In this section, we will walk through this sample to understand how is it built 
 ## Stacks
 
 * MyBatis Spring Boot Starter 2.2 (MyBatis 3.5, MyBatis Spring 2.0)
-* Spring Boot 2.6 (Spring Framework 5.3, Spring Security 5.6)
+* Spring Boot 2.7 (Spring Framework 5.3, Spring Security 5.7)
 * Thymeleaf 3.0
 * Hibernate Validator 6.2 (Bean Validation 2.0)
 * HSQLDB 2.5 (Embed Database)
-* Flyway 8.0 (DB Migration)
+* Flyway 8.5 (DB Migration)
 * Tomcat 9.0 (Embed Application Server)
 * Groovy 3.0 (Use multiple line string on MyBatis Mapper method)
 * Lombok 1.18
-* Selenide 6.1
+* Selenide 6.2
 * Selenium 4.1
 * etc ...
 
