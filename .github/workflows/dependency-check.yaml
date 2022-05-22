@@ -14,7 +14,7 @@
 #    limitations under the License.
 #
 
-name: Java CI
+name: Dependency Check
 
 on: [push]
 
