@@ -14,29 +14,21 @@
 #    limitations under the License.
 #
 
-name: Java CI
+name: Dependency Check
 
 on: [push]
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
-        java: [8, 11, 17, 18-ea]
-        distribution: ['zulu']
-      fail-fast: false
-      max-parallel: 4
-    name: Test JDK ${{ matrix.java }}, ${{ matrix.os }}
-
+    runs-on: ubuntu-latest
+    name: Dependency Check
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          java-version: ${{ matrix.java }}
-          distribution: ${{ matrix.distribution }}
+          java-version: 17
+          distribution: 'zulu'
       - name: Cache local Maven m2
         uses: actions/cache@v2
         with:
@@ -44,5 +36,5 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2
-      - name: Test with Maven
-        run: ./mvnw verify -B -D"license.skip=true" -D"dependency-check.skip=true"
+      - name: Dependency Check with Maven
+        run: ./mvnw dependency-check:check
