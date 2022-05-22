@@ -11,7 +11,7 @@ This is another implementation of MyBatis JPetStore sample application (https://
 Original application is available for downloading in the downloads section of MyBatis project site.
 In this section, we will walk through this sample to understand how is it built and learn how to run it.
 
-> **Note:**
+> **Note**
 >
 > This sample application is under development.
 > If you found an issue, please report from [here](https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore/issues/new).
