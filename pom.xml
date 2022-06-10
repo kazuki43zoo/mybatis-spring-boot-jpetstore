@@ -68,7 +68,7 @@
 		<selenium.version>4.1.0</selenium.version>
 		<groovy4.version>4.0.2</groovy4.version>
 		<!-- for test -->
-		<selenide.version>6.5.0</selenide.version>
+		<selenide.version>6.6.1</selenide.version>
 		<!-- for plugins -->
 		<license-maven-plugin.version>4.1</license-maven-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
