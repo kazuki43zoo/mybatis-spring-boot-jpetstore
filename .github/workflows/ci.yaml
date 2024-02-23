@@ -46,3 +46,6 @@ jobs:
             ${{ runner.os }}-m2
       - name: Test with Maven
         run: ./mvnw verify -B -D"license.skip=true" -D"dependency-check.skip=true"
+                      - name: Push package to packagecloud.io
+                uses: computology/packagecloud-github-action@v0.8
+            
